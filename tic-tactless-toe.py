@@ -1,5 +1,5 @@
 # Overarching program
-def tic-tactless-toe():
+def tic_tactless_toe():
     # Data structure: 2D array
     # board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
     board = [[0,0,0], [0,0,0], [0,0,0]]
@@ -7,7 +7,7 @@ def tic-tactless-toe():
     # Input function
         # Change value of nestled array, of r1,c1 to 1
         # board[0,0] = [1]
-    # Store player turn
+    # Ask player to make a move
         # X Player changes value of nestled array, of r1,c1 to 1
         # X player's input: r1,c1,1
         # Take in answer in 3 parts 'r1', 'c1', '1', remove commas
@@ -15,7 +15,10 @@ def tic-tactless-toe():
         # change c1=0, r2=1, c2=2
         # r1,c1,1 = 0,0,1
         # therefore, r1,c1,1 should run the function board[0,0] = [1]
-    # Ask player to make a move
+    # Store player's move
+        # X-player-move: r1,c1,1 aka 0,0,1
+        # def update_board(row, column, value)
+        # update_board(0, 0, 1)
     # Show state of game in terminal
     # Check if valid move
         # if not, reject and ask player to try again

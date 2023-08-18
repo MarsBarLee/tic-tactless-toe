@@ -10,3 +10,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 5m: Add winning message
 5m: Add new game section
 5m: Update data structure and comments
+10m: Add logic how player's input leads to game logic
+10m: Write pseudo-code for player's move
