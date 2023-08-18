@@ -1,7 +1,7 @@
 # Overarching program
-def tic-tac-toe() {
+def tic-tactless-toe() {
     # Data structure: 2D array
-    data_structure = [[], [], []]
+    data_structure = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
     # Input function
     # Ask player to make a move
     # Show state of game in terminal
@@ -13,3 +13,11 @@ def tic-tac-toe() {
     # Draw logic
     # Quit logic
 }
+
+"""
+Terminal view
+c1,c2,c3
+|x| |o|
+| |x|o|
+|o|o|x|
+"""
