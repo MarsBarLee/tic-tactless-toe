@@ -6,3 +6,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 5m: Add comments and pseudocode
 5m: Add data structure 
 5m: Add terminal view
+5m: Add asking for player's input
