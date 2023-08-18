@@ -3,6 +3,7 @@ def tic-tactless-toe() {
     # Data structure: 2D array
     data_structure = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
     # Input function
+    # Store player turn
     # Ask player to make a move
     # Show state of game in terminal
     # Check if valid move
@@ -15,9 +16,19 @@ def tic-tactless-toe() {
 }
 
 """
-Terminal view
-c1,c2,c3
-|x| |o|
-| |x|o|
-|o|o|x|
+Example of Terminal view
+    c1,c2,c3
+r1 |x |  |o |
+r2 |  |x |o |
+r3 |o |o |x |
+
+Example of asking player's input
+"What's your next big brain move, egghead?"
+Input your answer as eg
+r2,c2
+to add your
+
+Example of player input
+r1,c2
+
 """
