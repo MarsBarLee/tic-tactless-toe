@@ -1,7 +1,9 @@
 # Overarching program
 def tic-tactless-toe() {
     # Data structure: 2D array
-    data_structure = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
+    # data_structure = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
+    data_structure = [[0,0,0], [0,0,0], [0,0,0]]
+    # value of section is 0,1, or 2. Default state is blank: 0. X is 1. O is 2.
     # Input function
     # Store player turn
     # Ask player to make a move

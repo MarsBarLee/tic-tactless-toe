@@ -8,3 +8,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 5m: Add terminal view
 5m: Add asking for player's input
 5m: Add winning message
+5m: Add new game section
