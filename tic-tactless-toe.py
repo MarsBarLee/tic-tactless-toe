@@ -39,11 +39,20 @@ r2 |  |x |o |
 r3 |o |o |x |
 
 Winning message
-
 "Hey, you actually won. Maybe you do know something about tic-tac-toe."
 Reset game? Input as y or n
 y
 
+New game
+"Hey dingus, let's play tic-tac-toe. Or rather, tic-tactless-toe. You can probably guess whose the tactless one."
+Player O
+"What's your next big brain move, egghead?"
+Input your answer as rows and columns eg
+r2,c2
+to add your O to the middle of the board
 
-
+    c1,c2,c3
+r1 |  |  |  |
+r2 |  |  |  |
+r3 |  |  |  |
 """
