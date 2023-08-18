@@ -1,11 +1,20 @@
 # Overarching program
-def tic-tactless-toe() {
+def tic-tactless-toe():
     # Data structure: 2D array
-    # data_structure = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
-    data_structure = [[0,0,0], [0,0,0], [0,0,0]]
-    # value of section is 0,1, or 2. Default state is blank: 0. X is 1. O is 2.
+    # board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
+    board = [[0,0,0], [0,0,0], [0,0,0]]
+    # value of section of board i`s 0,v 1, or 2. Default state is blank: 0. X is 1. O is 2.
     # Input function
+        # Change value of nestled array, of r1,c1 to 1
+        # board[0,0] = [1]
     # Store player turn
+        # X Player changes value of nestled array, of r1,c1 to 1
+        # X player's input: r1,c1,1
+        # Take in answer in 3 parts 'r1', 'c1', '1', remove commas
+        # change r1=0, r2=1, r3=2
+        # change c1=0, r2=1, c2=2
+        # r1,c1,1 = 0,0,1
+        # therefore, r1,c1,1 should run the function board[0,0] = [1]
     # Ask player to make a move
     # Show state of game in terminal
     # Check if valid move
@@ -15,7 +24,6 @@ def tic-tactless-toe() {
     # Win logic
     # Draw logic
     # Quit logic
-}
 
 """
 Terminal view of board
