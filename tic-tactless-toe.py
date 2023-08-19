@@ -20,6 +20,14 @@ def tic_tactless_toe():
         # def update_board(row, column, value)
         # update_board(0, 0, 1)
     # Show state of game in terminal
+        # long print function over multiple lines? using \n
+        # taking the value of 
+        #      c1,    c2,    c3
+        #r1 |[0][0]|[0][1]|[0][2]|
+        #r2 |[1][0]|[1][1]|[1][2]|
+        #r3 |[2][0]|[2][1]|[2][2]|
+        # printing one row as
+        print(f"{}")
     # Check if valid move
         # if not, reject and ask player to try again
     # Change state of game by taking player input and updating data strcuture
