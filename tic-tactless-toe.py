@@ -46,13 +46,15 @@ board = [[0,0,0], [0,0,0], [0,0,0]]
                 2: 'O'
             Use the translation() and str.maketrans() methods
                 translation-dict = {0:" ", 1:"X", 2:"O"}
-                sample-string = "|{[0][0]} |{[0][1]} |{[0][2]} |"
+                board = "|{[0][0]} |{[0][1]} |{[0][2]} |"
+                    note: do we need to convert interger values into strings? Using the .int method in-between...?
                 create a translation table using the dictionary
                     translation-table = str.maketrans(translation-dict)
                 translate the string using the table
-    t               translated-text = text.translate(translation-table)
+                    board-as-x-o = board.translate(translation-table)
     Check if valid move
         if not, reject and ask player to try again
+        X-player-move: r1,c1,1
     Change state of game by taking player input and updating data strcuture
     Update game in terminal
     Win logic
