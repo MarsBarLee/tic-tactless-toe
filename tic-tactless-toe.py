@@ -82,9 +82,22 @@ def tic_tactless_toe():
             horizontal (3 variations), vertical (3 variations), diagonal (2 variations)
             for either player x or o
             do i need to hardcode each win condition? and what about the other sections of the boards where it doesn't matter of blank or opponent's section?
-            if (board[0][0] = 'X' or 'O') & board[][]  # horizontal win variation 1
+            diagonal win variation 1
+                0, 1, 2
+            0 |x |  |  |
+            1 |  |x |  |
+            2 |  |  |x |
+            if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O') ...
+            veritcal win condition 2
+               0, 1, 2
+            0 |  |o |  |
+            1 |  |o |  |
+            2 |  |o |  |
+            if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O') ...
     Draw logic
-    Quit logic
+        When all sections of board are filled up without any win conditions
+        
+    Restart logic
     """
 
 """
