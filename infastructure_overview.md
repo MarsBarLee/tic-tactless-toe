@@ -14,16 +14,26 @@
 - Quotes
 
 Functions
-- 
-
-Classes
+- Custom
+  - update_board()
+  - restart()
+  - check_win()
+  - check_draw
+- Built-in
+  - translation()
+  - str.maketrans() 
+  - int()
 
 Variables
 - x_player_turn
 - o_player_turn
 
-Data structures
+Data structures and variables
 - Board as nested array
+- Translation dictionary for translating array indexes (game logic) to board sections (player-facing visuals)
+- Quotes as ditionary
+- filled_section_counter
+- filled_row_counter
 
 def tic_tactless_toe():
     """

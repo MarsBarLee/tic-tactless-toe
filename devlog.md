@@ -33,3 +33,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add section and row counter in draw logic for loop
 - 5m: Add tactless quote logic
 - 5m: Create and fill in infrastructure_overview.md
+- 5m: Add functions and data structures to infrastructure_overview.md
