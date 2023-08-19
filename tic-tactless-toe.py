@@ -3,7 +3,7 @@ def tic_tactless_toe():
     # Data structure: 2D array
     # board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
     board = [[0,0,0], [0,0,0], [0,0,0]]
-    # value of section of board i`s 0,v 1, or 2. Default state is blank: 0. X is 1. O is 2.
+    # value of section of board is 0, 1, or 2. Default state is blank: 0. X is 1. O is 2.
     # Input function
         # Change value of nestled array, of r1,c1 to 1
         # board[0,0] = [1]
@@ -27,7 +27,10 @@ def tic_tactless_toe():
         #r2 |[1][0]|[1][1]|[1][2]|
         #r3 |[2][0]|[2][1]|[2][2]|
         # printing one row as
-        print(f"{}")
+            # print(f"|{[0][0]} |{[0][1]} |{[0][2]} |")
+        # printing over multiple rows
+        
+        # Translate value of '0' into blank: some sort of translation? 
     # Check if valid move
         # if not, reject and ask player to try again
     # Change state of game by taking player input and updating data strcuture
