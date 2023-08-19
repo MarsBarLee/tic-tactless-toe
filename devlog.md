@@ -26,3 +26,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Reconsider stored value as integers vs strings
 - 5m: Add Boolean to switching players logic 
 - 5m: Translate winning conditions into board logic
+- 5m: Add diagonal win condition logic
