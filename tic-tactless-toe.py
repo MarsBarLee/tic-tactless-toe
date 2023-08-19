@@ -68,7 +68,13 @@ def tic_tactless_toe():
     Update game in terminal
         Take from above 'Show state of game in terminal'
     Switch players
+        Boolean logic? eg x-player is 0, o-player is 1. Or is it x-player's turn? True, False. If x-player turn False, turn o-player's to True
     Win logic
+        example of player x winning board
+            c1,c2,c3
+        r1 |x |  |o |
+        r2 |  |x |o |
+        r3 |o |o |x |
     Draw logic
     Quit logic
     """

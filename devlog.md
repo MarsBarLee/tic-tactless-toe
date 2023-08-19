@@ -23,4 +23,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add translation dictionary for terminal view of board
 - 5m: Add int() function
 - 5m: Add translation dictionary for player's move
-- 5m: Reconsider stored value as intergers vs strings
+- 5m: Reconsider stored value as integers vs strings
+- 5m: Add Boolean to switching players logic 
