@@ -106,7 +106,14 @@ def tic_tactless_toe():
                 if filled_row_counter = 3
                     draw_game()
     Restart logic
-        
+        if player inputs "restart" as their answer, clear board, reset player
+    2 players or play against computer mode
+        Future feature
+    Tactless quote
+        A repository of quotes, depending on conditions
+        Conditions: New game, next move, restart, 2 player win/lose, draw
+        For each condition, minimum of 3 quotes
+        Data structure: object? with each condition and quortes being key-value pairs
     """
 
 """
@@ -116,7 +123,7 @@ r1 |x |  |o |
 r2 |  |  |o |
 r3 |o |o |x |
 
-Aking player's input
+Asking player's input
 Player X
 "What's your next big brain move, egghead?"
 Input your answer as rows and columns eg
