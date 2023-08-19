@@ -19,7 +19,7 @@ def tic_tactless_toe():
         r1,c1,1 = 0,0,1
         therefore, r1,c1,1 should run the function board[0,0] = [1]
     Store player's move
-        X-player-move: r1,c1,1 aka 0,0,1
+        X_player_move: r1,c1,1 aka 0,0,1
         def update_board(row, column, value)
         update_board(0, 0, 1)
     Show state of game in terminal
@@ -47,28 +47,28 @@ def tic_tactless_toe():
                 1: 'X'
                 2: 'O'
             Use the translation() and str.maketrans() methods
-                translation-dict = {0:" ", 1:"X", 2:"O"}
+                translation_dict = {0:" ", 1:"X", 2:"O"}
                 board = "|{[0][0]} |{[0][1]} |{[0][2]} |"
-                    note: do we need to convert interger values into strings? Using the .int method in-between...?
+                    note: do we need to convert interger values into strings? Using the .int method in_between...?
                 create a translation table using the dictionary
-                    translation-table = str.maketrans(translation-dict)
+                    translation_table = str.maketrans(translation_dict)
                 translate the string using the table
-                    board-as-x-o = board.translate(translation-table)
+                    board_as_x_o = board.translate(translation_table)
     Check if valid move
         if not, reject and ask player to try again
-        x-player-move = r1,c1,1
+        x_player_move = r1,c1,1
         Use translation dictionary again, but
-        row-column-translate-dict = {"r1":"0", r2":"1", r1":"2", "c1":"0", c2":"1", c1":"2"}
-        if x-player-move != between 0 and 2, reject answer
+        row_column_translate_dict = {"r1":"0", r2":"1", r1":"2", "c1":"0", c2":"1", c1":"2"}
+        if x_player_move != between 0 and 2, reject answer
         once again, seems like a lot of shuffling between integer
     Change state of game by taking player input and updating data strcuture
-        X-player-move: r1,c1,1 aka 0,0,1
+        X_player_move: r1,c1,1 aka 0,0,1
         def update_board(row, column, value)
         update_board(0, 0, 1)
     Update game in terminal
         Take from above 'Show state of game in terminal'
     Switch players
-        Boolean logic? eg x-player is 0, o-player is 1. Or is it x-player's turn? True, False. If x-player turn False, turn o-player's to True
+        Boolean logic? eg x_player is 0, o_player is 1. Or is it x_player's turn? True, False. If x_player turn False, turn o_player's to True
     Win logic
         example of player x winning board
             c1,c2,c3
@@ -100,8 +100,13 @@ def tic_tactless_toe():
         for row in board
             for column in row
                 if column != " "
-                if all columns are not != " "... if != " " 3 times, filled row
+                if all columns are not != " "... if != " " 3 times, that's a filled row. if filled row happens 3 times, than make a draw
+                if filled_section_counter = 3
+                    filled_row_counter += 1
+                if filled_row_counter = 3
+                    draw_game()
     Restart logic
+        
     """
 
 """
@@ -128,12 +133,12 @@ r2 |  |x |o |
 r3 |o |o |x |
 
 Winning message
-"Hey, you actually won. Maybe you do know something about tic-tac-toe."
+"Hey, you actually won. Maybe you do know something about tic_tac_toe."
 Reset game? Input as y or n
 y
 
 New game
-"Hey dingus, let's play tic-tac-toe. Or rather, tic-tactless-toe. You can probably guess whose the tactless one."
+"Hey dingus, let's play tic_tac_toe. Or rather, tic_tactless_toe. You can probably guess whose the tactless one."
 Player O
 "What's your next big brain move, egghead?"
 Input your answer as rows and columns eg

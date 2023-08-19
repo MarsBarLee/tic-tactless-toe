@@ -30,3 +30,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add vertical win logic
 - 5m: Add draw logic
 - 5m: Consider implementing counter manually or with enumerate()
+- 5m: Add section and row counter in draw logic for loop
