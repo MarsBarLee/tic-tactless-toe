@@ -20,5 +20,6 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add print function for terminal view
 - 5m: Add logic for translating values into Xs and Os. Learn ''' to print multiple lines without using \n
 - 5m: Look up 'how to translate dictionary python' and the resource https://www.tutorialspoint.com/How-to-translate-a-python-string-according-a-given-dictionary. Learn translate() and str.maketrans() functions
-- 5m: Add translation table
+- 5m: Add translation dictionary for terminal view of board
 - 5m: Add int() function
+- 5m: Add translation dictionary for player's move

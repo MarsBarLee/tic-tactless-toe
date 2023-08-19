@@ -54,7 +54,10 @@ board = [[0,0,0], [0,0,0], [0,0,0]]
                     board-as-x-o = board.translate(translation-table)
     Check if valid move
         if not, reject and ask player to try again
-        X-player-move: r1,c1,1
+        x-player-move = r1,c1,1
+        Use translation dictionary again, but
+        row-column-translate-dict = {"r1":"0", r2":"1", r1":"2", "c1":"0", c2":"1", c1":"2"}
+        if x-player-move != between 0 and 2, reject answer
     Change state of game by taking player input and updating data strcuture
     Update game in terminal
     Win logic
