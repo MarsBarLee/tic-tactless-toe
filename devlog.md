@@ -32,3 +32,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Consider implementing counter manually or with enumerate()
 - 5m: Add section and row counter in draw logic for loop
 - 5m: Add tactless quote logic
+- 5m: Create and fill in infrastructure_overview.md
