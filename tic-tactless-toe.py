@@ -75,6 +75,13 @@ def tic_tactless_toe():
         r1 |x |  |o |
         r2 |  |x |o |
         r3 |o |o |x |
+        Behind the scenes...
+        if (winning condition), then (run win function)
+        winning condition is r1c1, r2,c2, r3,c3 aka board = [["X"," ", "o"], [" ","X", "o"], ["o","o", "X"]]
+        wiinning conditions
+            horizontal (3 variations), vertical (3 variations), diagonal (2 variations)
+            for either player x or o
+            if 
     Draw logic
     Quit logic
     """
