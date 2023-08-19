@@ -1,6 +1,7 @@
 # Infrasturcutre Overview
 
-## Players
+## Concepts
+ Players
   - X player
   - O player
   - Tactless machine
@@ -14,37 +15,42 @@
 
 Functions
 - Custom
-  - check_valid_move
+  - check_valid_move()
   - update_board()
-  - print_board()
   - check_win()
   - check_draw()
   - restart()
   - switch_players_turn()
+  - print_board()
 - Built-in
   - translation()
   - str.maketrans() 
   - int()
   - for loops
   - if statements
-  - Booleans
 
 Variables
-- x_player_turn
-- o_player_turn
+
 
 Data structures and variables
 - Board as nested array
 - Translation dictionary for translating array indexes (game logic) to board sections (player-facing visuals)
-- Quotes as ditionary
+- Quotes as dictionary, keys as conditions (next time, win, etc) and values as array of quotes
+- x_player_turn = True/False Boolean
+- o_player_turn = True/False Boolean
 - filled_section_counter
 - filled_row_counter
 
 Data types
-- Intergers
+- Array indexes as Intergers
 - Strings
+  - Terminal output of board
+  - Player's input
+  - Tactless quotes
 - Booleans
+  - If Player X and Player O turn
 
+## Overview of game logic
 def tic_tactless_toe():
     """
     Data structure: 2D array
@@ -162,6 +168,7 @@ def tic_tactless_toe():
         Data structure: object? with each condition and quortes being key-value pairs
     """
 
+## Terminal view of game
 """
 Terminal view of board
     c1,c2,c3
