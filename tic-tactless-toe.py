@@ -29,8 +29,16 @@ def tic_tactless_toe():
         # printing one row as
             # print(f"|{[0][0]} |{[0][1]} |{[0][2]} |")
         # printing over multiple rows
-        
+            # print(f
+            # '''
+            # |{[0][0]} |{[0][1]} |{[0][2]} |
+            # |{[1][0]} |{[1][1]} |{[1][2]} |
+            # |{[2][0]} |{[2][1]} |{[2][2]} |
+            # '''
+            # )
         # Translate value of '0' into blank: some sort of translation? 
+            # pass through... a dictionary? maybe not print yet, but translate through dictionary and then print the dictionary results? so write a translation dictionary and a function that runs the translation? 
+            # don't print the board directly, store the value of the board
     # Check if valid move
         # if not, reject and ask player to try again
     # Change state of game by taking player input and updating data strcuture

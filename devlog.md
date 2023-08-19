@@ -18,3 +18,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 
 - 5m: Convert terminal view into 2D array logic
 - 5m: Add print function for terminal view
+- 5m:
