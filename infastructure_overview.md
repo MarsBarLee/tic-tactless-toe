@@ -1,7 +1,6 @@
 # Infrasturcutre Overview
 
-# Concepts
-- Players
+## Players
   - X player
   - O player
   - Tactless machine
@@ -15,14 +14,20 @@
 
 Functions
 - Custom
+  - check_valid_move
   - update_board()
-  - restart()
+  - print_board()
   - check_win()
-  - check_draw
+  - check_draw()
+  - restart()
+  - switch_players_turn()
 - Built-in
   - translation()
   - str.maketrans() 
   - int()
+  - for loops
+  - if statements
+  - Booleans
 
 Variables
 - x_player_turn
@@ -34,6 +39,11 @@ Data structures and variables
 - Quotes as ditionary
 - filled_section_counter
 - filled_row_counter
+
+Data types
+- Intergers
+- Strings
+- Booleans
 
 def tic_tactless_toe():
     """
