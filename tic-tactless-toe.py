@@ -2,9 +2,11 @@
 def tic_tactless_toe():
     """
     Data structure: 2D array
-    board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]]
-board = [[0,0,0], [0,0,0], [0,0,0]]
-    value of section of board is 0, 1, or 2. Default state is blank: 0. X is 1. O is 2.
+        board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]] # as rows and columns
+        board = [[0,0,0], [0,0,0], [0,0,0]] # as intergers
+        board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # as  strings
+        value of section of board is 0, 1, or 2. Default state is blank: 0. X is 1. O is 2.
+        store value of board as intergers instead of strings because... more optimized? will be converted to string to player? needless changing?
     Input function
         Change value of nestled array, of r1,c1 to 1
         board[0,0] = [1]
@@ -58,8 +60,14 @@ board = [[0,0,0], [0,0,0], [0,0,0]]
         Use translation dictionary again, but
         row-column-translate-dict = {"r1":"0", r2":"1", r1":"2", "c1":"0", c2":"1", c1":"2"}
         if x-player-move != between 0 and 2, reject answer
+        once again, seems like a lot of shuffling between integer
     Change state of game by taking player input and updating data strcuture
+        X-player-move: r1,c1,1 aka 0,0,1
+        def update_board(row, column, value)
+        update_board(0, 0, 1)
     Update game in terminal
+        Take from above 'Show state of game in terminal'
+    Switch players
     Win logic
     Draw logic
     Quit logic
