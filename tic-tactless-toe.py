@@ -100,6 +100,7 @@ def tic_tactless_toe():
         for row in board
             for column in row
                 if column != " "
+                if all columns are not != " "... if != " " 3 times, filled row
     Restart logic
     """
 

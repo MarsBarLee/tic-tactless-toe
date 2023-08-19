@@ -28,4 +28,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Translate winning conditions into board logic
 - 5m: Add diagonal win condition logic
 - 5m: Add vertical win logic
-- 5m: Add draw logic using nestled for loops
+- 5m: Add draw logic
+- 5m: Consider implementing counter manually or with enumerate()
