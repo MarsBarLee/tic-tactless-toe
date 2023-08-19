@@ -2,15 +2,35 @@
 
 board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]]
 
-def print_board
+def print_board():
+    print(f
+    '''
+    |{[0][0]} |{[0][1]} |{[0][2]} |
+    |{[1][0]} |{[1][1]} |{[1][2]} |
+    |{[2][0]} |{[2][1]} |{[2][2]} |
+    '''
+    )
 
-def start_game() {
+def start():
     # print current board
+    print_board()
 
-}
+start()
 
+"""
+  - start()
+  - check_valid_move()
+  - update_board()
+  - check_win()
+  - check_draw()
+  - restart()
+  - quit()
+  - switch_players_turn()
+  - print_board()
+"""
+
+"""
 def tic_tactless_toe():
-    """
     Data structure: 2D array
         board = [[c1,c2,c3], [c1,c2,c3], [c1,c2,c3]] # as rows and columns
         board = [[0,0,0], [0,0,0], [0,0,0]] # as intergers

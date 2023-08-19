@@ -1,4 +1,4 @@
-# Infrasturcutre Overview
+# Infrastructure Overview
 
 ## Concepts
  Players
@@ -16,7 +16,7 @@
 
 Functions
 - Custom
-  - start_game()
+  - start()
   - check_valid_move()
   - update_board()
   - check_win()
