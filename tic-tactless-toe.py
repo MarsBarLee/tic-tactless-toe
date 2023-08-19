@@ -96,7 +96,10 @@ def tic_tactless_toe():
             if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O') ...
     Draw logic
         When all sections of board are filled up without any win conditions
-        
+        Filled up: If all section is not " ". Check for all using for loop?
+        for row in board
+            for column in row
+                if column != " "
     Restart logic
     """
 
