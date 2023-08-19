@@ -1,4 +1,14 @@
 # Overarching program
+
+board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]]
+
+def print_board
+
+def start_game() {
+    # print current board
+
+}
+
 def tic_tactless_toe():
     """
     Data structure: 2D array

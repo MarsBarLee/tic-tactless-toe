@@ -11,15 +11,18 @@
   - Win/Lose
   - Draw
   - Restart
+  - Quit
 - Quotes
 
 Functions
 - Custom
+  - start_game()
   - check_valid_move()
   - update_board()
   - check_win()
   - check_draw()
   - restart()
+  - quit()
   - switch_players_turn()
   - print_board()
 - Built-in
@@ -29,20 +32,18 @@ Functions
   - for loops
   - if statements
 
-Variables
-
-
 Data structures and variables
 - Board as nested array
 - Translation dictionary for translating array indexes (game logic) to board sections (player-facing visuals)
-- Quotes as dictionary, keys as conditions (next time, win, etc) and values as array of quotes
+- Quotes as dictionary, keys as conditions (next move, win, etc) and values as array of quotes
 - x_player_turn = True/False Boolean
 - o_player_turn = True/False Boolean
 - filled_section_counter
 - filled_row_counter
 
 Data types
-- Array indexes as Intergers
+- Intergers
+  - Board sections as array indexes
 - Strings
   - Terminal output of board
   - Player's input
