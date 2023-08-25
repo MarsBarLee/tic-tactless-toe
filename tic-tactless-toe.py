@@ -4,7 +4,7 @@
 board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 
 def print_board():
-    print(board[0][0]) # only print value
+    # print(board[0][0]) # only print value
     print(f"Here is the top left section's value: {board[0][0]}") # with string literal
     # hardcoded example
     # '''
@@ -13,7 +13,7 @@ def print_board():
     # |{[2][0]} |{[2][1]} |{[2][2]} |
     #''' 
     #)
-    print(
+    print("This is the current board. \n"
     f"|{board[0][0]} |{board[0][1]} |{board[0][2]} | \n"
     f"|{board[1][0]} |{board[1][1]} |{board[1][2]} | \n"
     f"|{board[2][0]} |{board[2][1]} |{board[2][2]} | \n"
@@ -24,7 +24,13 @@ def start():
     print_board()
 
 def update_board(row, column, value):
+    print("Running updated_board()")
+    print_board() # print current board
     board[row][column] = value
+    print_board() # print updated board
+    # user side: python -c "from file_name import function;function()"
+    # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
+    # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
 
 start()
 

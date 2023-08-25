@@ -47,4 +47,9 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Reformat multi-line f-string with f in front of each line and \n at end
 - Milestone: print_board() now prints actual value of board variable
 - 5m: Add update_board()
-- 5m: Learn how to run a function from the command line in a .py file using -c command 
+- 5m: Learn how to run a function from the command line in a .py file using -c command
+- 5m: Try running a function from the command line
+- 5m: Learn how to create interactive .py file using python3 command
+- 5m: Learn about import vs run_module() 
+- 5m: Test out interactive session with 'python3 -i tic-tactless-toe.py' and exit()
+- 5m: Test out interactive session with update_board() and print_board()
