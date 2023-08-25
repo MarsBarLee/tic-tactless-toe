@@ -13,16 +13,18 @@ def print_board():
     # |{[2][0]} |{[2][1]} |{[2][2]} |
     #''' 
     #)
-    print(f"
-    '''|{[0][0]} |{[0][1]} |{[0][2]} |
-     |{[1][0]} |{[1][1]} |{[1][2]} |
-     |{[2][0]} |{[2][1]} |{[2][2]} |
-    ''' "
+    print(
+    f"|{board[0][0]} |{board[0][1]} |{board[0][2]} | \n"
+    f"|{board[1][0]} |{board[1][1]} |{board[1][2]} | \n"
+    f"|{board[2][0]} |{board[2][1]} |{board[2][2]} | \n"
     )
 
 def start():
     # print current board
     print_board()
+
+def update_board(row, column, value):
+    board[row][column] = value
 
 start()
 

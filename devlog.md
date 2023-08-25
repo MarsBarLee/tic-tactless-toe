@@ -43,3 +43,7 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Start building a non-hardcoded print_board()
 - 5m: Update board with test values and retrieve test value
 - 5m: Add a test to print_board() using f-strings to print variable in strings
+- 5m: Move placement of quotes and double quotes in multi-line f-string in print_board()
+- 5m: Reformat multi-oline f-string with f in front of each line and \n at end
+- Milestone: print_board() now prints actual value of board variable
+- 5m: Add update_board()
