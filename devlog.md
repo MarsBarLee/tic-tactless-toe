@@ -42,3 +42,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 
 - 5m: Start building a non-hardcoded print_board()
 - 5m: Update board with test values and retrieve test value
+- 5m: Add a test to print_board() using f-strings to print variable in strings

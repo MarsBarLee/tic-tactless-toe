@@ -4,15 +4,22 @@
 board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 
 def print_board():
-    print(board[0][0])
+    print(board[0][0]) # only print value
+    print(f"Here is the top left section's value: {board[0][0]}") # with string literal
     # hardcoded example
     # '''
     # |{[0][0]} |{[0][1]} |{[0][2]} |
     # |{[1][0]} |{[1][1]} |{[1][2]} |
     # |{[2][0]} |{[2][1]} |{[2][2]} |
     #''' 
-    #
     #)
+    print(f)
+     '''
+     |{[0][0]} |{[0][1]} |{[0][2]} |
+     |{[1][0]} |{[1][1]} |{[1][2]} |
+     |{[2][0]} |{[2][1]} |{[2][2]} |
+    ''' 
+    )
 
 def start():
     # print current board
