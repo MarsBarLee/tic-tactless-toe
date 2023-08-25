@@ -38,7 +38,7 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Re-arrange tic-tactless-toe.py based on infastructure_overview.md
 - 5m: Add print_board() and learn to run .py file locally
 
-2023-08-2
+2023-08-24
 
 - 5m: Start building a non-hardcoded print_board()
 - 5m: Update board with test values and retrieve test value
@@ -53,3 +53,6 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Learn about import vs run_module() 
 - 5m: Test out interactive session with 'python3 -i tic-tactless-toe.py' and exit()
 - 5m: Test out interactive session with update_board() and print_board()
+
+2023-08-25
+- 5m: Talk to Patrick on feedback such has persistent board after exit(), use while loop to consistently ask for next player's move by checking for check_win() and making final version of functions modular

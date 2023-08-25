@@ -18,7 +18,6 @@ Functions
 - Custom
   - start()
   - check_valid_move()
-  - update_board()
   - check_win()
   - check_draw()
   - restart()
@@ -50,6 +49,7 @@ Data types
   - Tactless quotes
 - Booleans
   - If Player X and Player O turn
+
 
 ## Overview of game logic
 def tic_tactless_toe():
