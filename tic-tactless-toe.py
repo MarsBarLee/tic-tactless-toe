@@ -45,7 +45,7 @@ def check_valid_move(row, column, value):
         # stop the function from running further
 
 def switch_players_turn():
-    x_player_turn = True
+    x_player_turn = True # hardcoded for now: future editions, randomize which player starts first?
     y_player_turn = False
     # if x_player_turn = ... input received? Then x_player_turn = not x_player turn
     # if x_player_turn = False: y_player_turn = not y_player_turn
@@ -55,8 +55,20 @@ def start_turn():
 
 def check_win():
     # horizontal win condition (3 variations)
+        # top row
+        if 
+        # middle row
+        if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+            print('Congratulations! You won!')
+        # bottom row
     # vertical win condition (3 variations)
+        # left column
+        if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O')
     # diagonal win conditions (2 variations)
+        # left-to-rigtht diagonal
+        if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+        print('Congratulations! You won!') # in future, replace with quotes
+
 
 start_game()
 
