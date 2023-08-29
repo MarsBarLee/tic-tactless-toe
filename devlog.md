@@ -55,4 +55,11 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Test out interactive session with update_board() and print_board()
 
 2023-08-25
-- 5m: Talk to Patrick on feedback such has persistent board after exit(), use while loop to consistently ask for next player's move by checking for check_win() and making final version of functions modular
+- 15m: Talk to Patrick on feedback such has persistent board after exit(), use while loop to consistently ask for next player's move by checking for check_win() and making final version of functions modular
+
+2023-08-28
+- 5m: Add check_valid_move()
+- 5m: Add statement to check range of player's values in check_valid_move()
+- 5m: 
+
+Goal: Make update_board() and print_board() modular

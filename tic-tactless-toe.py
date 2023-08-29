@@ -24,13 +24,25 @@ def start():
     print_board()
 
 def update_board(row, column, value):
+    # check_valid_move(row, column, value)
     print("Running updated_board()")
-    print_board() # print current board
+    print_board() # print current board, for testing, remove later
     board[row][column] = value
-    print_board() # print updated board
+    print_board() # print updated board, replace with print_board() later
     # user side: python -c "from file_name import function;function()"
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
+
+def check_valid_move(row, column, value):
+    # needs to take input from update_board()
+    # check if in bound of board[row][column], board[0-2][0-2]
+    if 0<= row <=2 or 0<= column <=2:
+        # let rest of update_function() run
+    else:
+        print('Invalid move! Put in your moves, with the correct values.')
+        # 
+        # stop the function from running further
+
 
 start()
 
