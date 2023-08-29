@@ -22,12 +22,13 @@ Functions
   - check_win()
   - check_draw()
   - restart()
-  - quit()
+  - quit_game()
   - switch_players_turn()
   - print_board()
 - Built-in
   - translation()
   - str.maketrans() 
+  - quit()
   - int()
   - for loops
   - if statements

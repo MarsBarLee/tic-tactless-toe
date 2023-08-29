@@ -71,3 +71,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add check_draw()
 - 5m: Add restart()
 - Thought: Might need to start branching soon since I've laid down most of the most logic and will need to majorly re-arrange things soon eg making functions modular and replacing test values with final values
+- 5m: Change quit() into quit_game() to not trigger built-in Python command quit()

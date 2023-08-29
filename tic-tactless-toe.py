@@ -83,6 +83,7 @@ def check_win():
         print('Congratulations! You won!') 
 
 
+
 filled_section_counter = 0
 
 def check_draw():
@@ -101,23 +102,20 @@ def check_draw():
 def restart():
     # when the player input the restart command
     print('You have chosen to restart the game. The game will now restart.')
-    # when game has reached check_win() or check_draw() 
+    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+    # when game has reached a win
+    print('A player has won. The game will now restart.') # change to X/Y player has won
+    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+    # when game has reached a down
+    print('There is a draw. Nobody wins! The game will now restart.') # change to X/Y player has won
+    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+
+def quit_game():
+    # when the player input the quit command
+    print('You have chosen to quit the game. The game will now quit.')
+    quit()
 
 start_game()
-
-"""
-    Draw logic
-        When all sections of board are filled up without any win conditions
-        Filled up: If all section is not " ". Check for all using for loop?
-        for row in board
-            for column in row
-                if column != " "
-                if all columns are not != " "... if != " " 3 times, that's a filled row. if filled row happens 3 times, than make a draw
-                if filled_section_counter = 3
-                    filled_row_counter += 1
-                if filled_row_counter = 3
-                    draw_game()
-"""
 
 """
   - start()
