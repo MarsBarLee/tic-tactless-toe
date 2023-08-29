@@ -62,5 +62,6 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add statement to check range of player's values in check_valid_move()
 - 5m: Add else statemnet to check_valid_move()
 - 5m: Add switch_player_turn()
+- 5m: Split start() into start_game() and start_turn()
 
 Goal: Make update_board() and print_board() modular

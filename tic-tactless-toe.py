@@ -19,7 +19,7 @@ def print_board():
     f"|{board[2][0]} |{board[2][1]} |{board[2][2]} | \n"
     )
 
-def start():
+def start_game():
     # print current board
     print_board()
 
@@ -38,7 +38,8 @@ def check_valid_move(row, column, value):
     # check if in bound of board[row][column], board[0-2][0-2]
     if 0<= row <=2 or 0<= column <=2:
         print('Valid move. Updating the board.')
-        # let rest of update_function() run... move check_valud_move() to update_function()? But want to keep modular
+        # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
+        # attempt: in update_board(), if valid_move = true, run this section of update_board()...
     else:
         print('Invalid move! Put in your moves, with the correct values.')
         # stop the function from running further
@@ -46,10 +47,57 @@ def check_valid_move(row, column, value):
 def switch_players_turn():
     x_player_turn = True
     y_player_turn = False
-    # if x
+    # if x_player_turn = ... input received? Then x_player_turn = not x_player turn
+    # if x_player_turn = False: y_player_turn = not y_player_turn
 
+def start_turn():
+    # this will run update_board(), check_valid_move(), switch_player_turn
 
-start()
+def check_win():
+    # horizontal win condition (3 variations)
+    # vertical win condition (3 variations)
+    # diagonal win conditions (2 variations)
+
+start_game()
+
+"""
+    Win logic
+        example of player x winning board
+            c1,c2,c3
+        r1 |x |  |o |
+        r2 |  |x |o |
+        r3 |o |o |x |
+        Behind the scenes...
+        if (winning condition), then (run win function)
+        winning condition is r1c1, r2,c2, r3,c3 aka board = [["X"," ", "o"], [" ","X", "o"], ["o","o", "X"]]
+        wiinning conditions
+            horizontal (3 variations), vertical (3 variations), diagonal (2 variations)
+            for either player x or o
+            do i need to hardcode each win condition? and what about the other sections of the boards where it doesn't matter of blank or opponent's section?
+            diagonal win variation 1
+                0, 1, 2
+            0 |x |  |  |
+            1 |  |x |  |
+            2 |  |  |x |
+            if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O') ...
+            veritcal win condition 2
+               0, 1, 2
+            0 |  |o |  |
+            1 |  |o |  |
+            2 |  |o |  |
+            if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O') ...
+    Draw logic
+        When all sections of board are filled up without any win conditions
+        Filled up: If all section is not " ". Check for all using for loop?
+        for row in board
+            for column in row
+                if column != " "
+                if all columns are not != " "... if != " " 3 times, that's a filled row. if filled row happens 3 times, than make a draw
+                if filled_section_counter = 3
+                    filled_row_counter += 1
+                if filled_row_counter = 3
+                    draw_game()
+"""
 
 """
   - start()

@@ -16,7 +16,8 @@
 
 Functions
 - Custom
-  - start()
+  - start_game()
+  - start_turn()
   - check_valid_move()
   - check_win()
   - check_draw()
