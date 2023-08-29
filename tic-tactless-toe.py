@@ -24,7 +24,7 @@ def start():
     print_board()
 
 def update_board(row, column, value):
-    # check_valid_move(row, column, value)
+    check_valid_move(row, column, value)
     print("Running updated_board()")
     print_board() # print current board, for testing, remove later
     board[row][column] = value
@@ -37,11 +37,16 @@ def check_valid_move(row, column, value):
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
     if 0<= row <=2 or 0<= column <=2:
-        # let rest of update_function() run
+        print('Valid move. Updating the board.')
+        # let rest of update_function() run... move check_valud_move() to update_function()? But want to keep modular
     else:
         print('Invalid move! Put in your moves, with the correct values.')
-        # 
         # stop the function from running further
+
+def switch_players_turn():
+    x_player_turn = True
+    y_player_turn = False
+    # if x
 
 
 start()
