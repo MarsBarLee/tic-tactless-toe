@@ -56,19 +56,28 @@ def start_turn():
 def check_win():
     # horizontal win condition (3 variations)
         # top row
-        if 
+        if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
+            print('Congratulations! You won!')
         # middle row
-        if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+        elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
             print('Congratulations! You won!')
         # bottom row
+        elif (board[2][0] = 'X' or 'O') & (board[2][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+            print('Congratulations! You won!')
     # vertical win condition (3 variations)
         # left column
-        if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O')
+        if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
+            print('Congratulations! You won!')
+        # middle column
+        elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
+            print('Congratulations! You won!')
+        # right column
+        elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
+            print('Congratulations! You won!')
     # diagonal win conditions (2 variations)
         # left-to-rigtht diagonal
         if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
         print('Congratulations! You won!') # in future, replace with quotes
-
 
 start_game()
 
