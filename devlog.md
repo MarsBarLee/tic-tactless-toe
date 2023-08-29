@@ -66,5 +66,7 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add check_win()
 - 5m: Add diagonal (left-to-right) and horizontal (top row) win conditions to check_win()
 - 5m: Add horizontal (middle row), horizontal (bottom row) and vertical win (left column) to check_win()
+- 5m: Add vertical (left, right middle columns) and diagonal (right-to-left) to check_win()
+- 5m: Add check_draw()
 - 
 Goal: Make update_board() and print_board() modular
