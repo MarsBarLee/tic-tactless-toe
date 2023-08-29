@@ -89,14 +89,19 @@ def check_draw():
     for row in board:
         for column in row:
             if column != " ":
-                print('Filled column, increase filled_section_counter by one') # remove in final
+                print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
                     if filled_section_counter = 9:
-                        
+                        print('The game has come to a draw.')
+                        # restart_game prompt?
             else:
-                break
+                print('Empty section') # remove in final
+                # nothing happens
 
-            
+def restart():
+    # when the player input the restart command
+    print('You have chosen to restart the game. The game will now restart.')
+    # when game has reached check_win() or check_draw() 
 
 start_game()
 

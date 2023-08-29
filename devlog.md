@@ -58,6 +58,7 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 15m: Talk to Patrick on feedback such has persistent board after exit(), use while loop to consistently ask for next player's move by checking for check_win() and making final version of functions modular
 
 2023-08-28
+- Goal: Make functions like update_board() and print_board() modular
 - 5m: Add check_valid_move()
 - 5m: Add statement to check range of player's values in check_valid_move()
 - 5m: Add else statemnet to check_valid_move()
@@ -68,5 +69,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add horizontal (middle row), horizontal (bottom row) and vertical win (left column) to check_win()
 - 5m: Add vertical (left, right middle columns) and diagonal (right-to-left) to check_win()
 - 5m: Add check_draw()
-- 
-Goal: Make update_board() and print_board() modular
+- 5m: Add restart()
+- Thought: Might need to start branching soon since I've laid down most of the most logic and will need to majorly re-arrange things soon eg making functions modular and replacing test values with final values
