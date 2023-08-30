@@ -2,6 +2,7 @@
 
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
 board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+game_status = "start_game" # not sure what to start game with
 
 def print_board():
     # print(board[0][0]) # only print value
@@ -82,17 +83,29 @@ def check_win():
     elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
         print('Congratulations! You won!') 
 
-# next up: quote repository
 class quote_repository:
-    # game_status
-    # activate quote depending on game status
-    start_game_quotes = {
+    # game_status, update a global variable? change to existing dictionary?
+    # activate quote depending on game status. if game_status = start_game
+    start_game = {
         "Welcome, I guess. Why you started, I don't even know."
+        "Welcome. I don't need to explain tic-tac-toe to you, do I?"
+        "Welcome. You might not know, but tic-tac-toe is a pretty simple game."
     }
-    ask_player_for_move
+    ask_player_for_move = {
+        "This is the part where you keep trying to not lose."
+        "That move didn't totally suck!"
+        "They say the only thing you can do is keep going. So... keep going?"
+    }
+    invalid_move ={
+        "Hey genius. That's an invalid move."
+        "That's not going to work. Try better."
+        "Do you even know how to play a simple game like tic-tac-toe?"
+    }
     win_game = {
+        "Hey, everybody, get a load of this guy here, they won!"
         "Hey, not bad, for once."
-        ""
+        "Winning can be fun, once you get the hang of it."
+        "I'm not sure why you kept going, but it worked out in the end."
     }
     draw = {
         "Despite not being very good, at least you stuck through it to the very end."
@@ -100,7 +113,7 @@ class quote_repository:
         "You really are playing at the edge of your abilities."
     }
     restart = {
-        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)"
+        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)."
         "If first you don't succeed... restart many more times."
         "Yeah, let's pretend that last play didn't happen."
     }
@@ -109,6 +122,8 @@ class quote_repository:
         "At least you're aware that you're not that good."
         "Come back when you're more... capable."
     }
+
+quote_repository = quote_repository()
 
 filled_section_counter = 0
 

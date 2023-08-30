@@ -77,3 +77,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 2023-08-29
 - 5m: Add class for quote_repository
 - 5m: Add win_game, draw, restart and quit for quote_repository
+- 5m: Add invalid_move, ask_player_for_move adn start_game for quote_repository
+- 5m: Add global variable game_status and create an object instance of quote_repository class
