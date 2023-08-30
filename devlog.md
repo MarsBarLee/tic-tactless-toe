@@ -75,4 +75,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - Next-up: Add quote repository as Python class with 'Game states' as key-value pairs, add translation table
 
 2023-08-29
-- 5m : Add class for quote_repository
+- 5m: Add class for quote_repository
+- 5m: Add win_game, draw, restart and quit for quote_repository

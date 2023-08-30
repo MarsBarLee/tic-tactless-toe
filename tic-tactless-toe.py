@@ -85,12 +85,30 @@ def check_win():
 # next up: quote repository
 class quote_repository:
     # game_status
-    start_game_quotes
+    # activate quote depending on game status
+    start_game_quotes = {
+        "Welcome, I guess. Why you started, I don't even know."
+    }
     ask_player_for_move
-    win_game
-    draw
-    restart
-    quit
+    win_game = {
+        "Hey, not bad, for once."
+        ""
+    }
+    draw = {
+        "Despite not being very good, at least you stuck through it to the very end."
+        "Sometimes things are a dead-end. Like this. And many, many other things of yours."
+        "You really are playing at the edge of your abilities."
+    }
+    restart = {
+        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)"
+        "If first you don't succeed... restart many more times."
+        "Yeah, let's pretend that last play didn't happen."
+    }
+    quit = {
+        "You weren't getting anywhere close to winning anyway."
+        "At least you're aware that you're not that good."
+        "Come back when you're more... capable."
+    }
 
 filled_section_counter = 0
 
