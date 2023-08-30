@@ -82,7 +82,15 @@ def check_win():
     elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
         print('Congratulations! You won!') 
 
-
+# next up: quote repository
+class quote_repository:
+    # game_status
+    start_game_quotes
+    ask_player_for_move
+    win_game
+    draw
+    restart
+    quit
 
 filled_section_counter = 0
 

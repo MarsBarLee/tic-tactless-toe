@@ -67,8 +67,12 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add check_win()
 - 5m: Add diagonal (left-to-right) and horizontal (top row) win conditions to check_win()
 - 5m: Add horizontal (middle row), horizontal (bottom row) and vertical win (left column) to check_win()
-- 5m: Add vertical (left, right middle columns) and diagonal (right-to-left) to check_win()
+- 5m: Add vertical (left, right, middle columns) and diagonal (right-to-left) to check_win()
 - 5m: Add check_draw()
 - 5m: Add restart()
 - Thought: Might need to start branching soon since I've laid down most of the most logic and will need to majorly re-arrange things soon eg making functions modular and replacing test values with final values
 - 5m: Change quit() into quit_game() to not trigger built-in Python command quit()
+- Next-up: Add quote repository as Python class with 'Game states' as key-value pairs, add translation table
+
+2023-08-29
+- 5m : Add class for quote_repository
