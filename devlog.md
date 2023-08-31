@@ -83,3 +83,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 
 2023-08-31
 - 5m: Add game_state to various functions
+- 5m: Add more game_state to various functions
+- Next-up: Test out interactive session with update_board() and print_board() still works

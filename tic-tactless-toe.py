@@ -2,7 +2,7 @@
 
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
 board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-game_status = "start_game" # not sure what to start game with
+game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
 
 def print_board():
     # print(board[0][0]) # only print value
@@ -48,6 +48,7 @@ def check_valid_move(row, column, value):
         # stop the function from running further
 
 def switch_players_turn():
+    game_status = 'ask_player_for_turn'
     x_player_turn = True # hardcoded for now: future editions, randomize which player starts first?
     y_player_turn = False
     # if x_player_turn = ... input received? Then x_player_turn = not x_player turn
@@ -64,26 +65,33 @@ def check_win():
         print('Congratulations! You won!')
     # middle row
     elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!')
     # bottom row
     elif (board[2][0] = 'X' or 'O') & (board[2][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!') # in future, replace with quotes
 # vertical win condition (3 variations)
     # left column
     if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!')
     # middle column
     elif (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!')
     # right column
     elif (board[0][2] = 'X' or 'O') & (board[1][2] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!')
 # diagonal win conditions (2 variations)
     # left-to-right diagonal
     if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!') 
     # right-to-left diagonal
     elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
+        game_status = 'win_game'
         print('Congratulations! You won!') 
 
 class quote_repository:
@@ -126,7 +134,7 @@ class quote_repository:
         "Come back when you're more... capable."
     }
 
-quote_repository = quote_repository()
+quote_repository = quote_repository() # make a object instance of the class quote_repositor
 
 filled_section_counter = 0
 
@@ -146,17 +154,21 @@ def check_draw():
 
 def restart():
     # when the player input the restart command
+    game_status = 'restart'
     print('You have chosen to restart the game. The game will now restart.')
     board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
     # when game has reached a win
+    game_status = 'restart'
     print('A player has won. The game will now restart.') # change to X/Y player has won
     board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
     # when game has reached a down
+    game_status = 'restart'
     print('There is a draw. Nobody wins! The game will now restart.') # change to X/Y player has won
     board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 
 def quit_game():
     # when the player input the quit command
+    game_status = 'quit'
     print('You have chosen to quit the game. The game will now quit.')
     quit()
 
