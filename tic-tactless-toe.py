@@ -21,6 +21,7 @@ def print_board():
     )
 
 def start_game():
+    game_status = 'start_game'
     # print current board
     print_board()
 
@@ -38,6 +39,7 @@ def check_valid_move(row, column, value):
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
     if 0<= row <=2 or 0<= column <=2:
+        game_status = 'valid_move'
         print('Valid move. Updating the board.')
         # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
         # attempt: in update_board(), if valid_move = true, run this section of update_board()...
@@ -58,6 +60,7 @@ def check_win():
 # horizontal win condition (3 variations)
     # top row
     if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
+        game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row
     elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
@@ -134,6 +137,7 @@ def check_draw():
                 print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
                     if filled_section_counter = 9:
+                        game_status = 'draw'
                         print('The game has come to a draw.')
                         # restart_game prompt?
             else:

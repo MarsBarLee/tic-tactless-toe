@@ -36,6 +36,8 @@ Functions
 Data structures and variables
 - Board as nested array
 - Translation dictionary for translating array indexes (game logic) to board sections (player-facing visuals)
+- Game status as global variable
+  - Or as dictionary?
 - Quotes as dictionary, keys as conditions (next move, win, etc) and values as array of quotes
 - x_player_turn = True/False Boolean
 - o_player_turn = True/False Boolean
