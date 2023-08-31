@@ -56,43 +56,44 @@ def switch_players_turn():
 
 def start_turn():
     # this will run update_board(), check_valid_move(), switch_player_turn
+    update_board()
 
 def check_win():
-# horizontal win condition (3 variations)
+    # horizontal win condition (3 variations)
     # top row
     if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row
-    elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
-    # bottom row
-    elif (board[2][0] = 'X' or 'O') & (board[2][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!') # in future, replace with quotes
-# vertical win condition (3 variations)
-    # left column
-    if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
-    # middle column
-    elif (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
-    # right column
-    elif (board[0][2] = 'X' or 'O') & (board[1][2] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
-# diagonal win conditions (2 variations)
-    # left-to-right diagonal
-    if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!') 
-    # right-to-left diagonal
-    elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
-        game_status = 'win_game'
-        print('Congratulations! You won!') 
+    # elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!')
+    # # bottom row
+    # elif (board[2][0] = 'X' or 'O') & (board[2][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!') # in future, replace with quotes
+    # # vertical win condition (3 variations)
+    # # left column
+    # if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!')
+    # # middle column
+    # elif (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!')
+    # # right column
+    # elif (board[0][2] = 'X' or 'O') & (board[1][2] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!')
+    # # diagonal win conditions (2 variations)
+    # # left-to-right diagonal
+    # if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!') 
+    # # right-to-left diagonal
+    # elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
+    #     game_status = 'win_game'
+    #     print('Congratulations! You won!') 
 
 class quote_repository:
     # game_status, update a global variable? change to existing dictionary?
