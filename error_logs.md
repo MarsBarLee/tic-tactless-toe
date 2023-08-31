@@ -22,5 +22,5 @@ def check_win():
     # horizontal win condition (3 variations)
     # top row
     if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
-Error: "(" was not clsoed
+Error: "(" was not closed
 Reason: 

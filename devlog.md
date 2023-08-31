@@ -85,3 +85,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add game_state to various functions
 - 5m: Add more game_state to various functions
 - Next-up: Test out interactive session with update_board() and print_board() still works
+- 10m: Debug errors from interactive session and update error_log.md
+- 5m: Debug error ""(" was not closed" in check_win()

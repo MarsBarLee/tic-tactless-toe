@@ -61,7 +61,7 @@ def start_turn():
 def check_win():
     # horizontal win condition (3 variations)
     # top row
-    if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
+    if (board[0][0] == 'X' OR board[0][0] == 'O') AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row
