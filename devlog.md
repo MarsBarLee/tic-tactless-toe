@@ -92,3 +92,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 2023-09-01
 - 5m: Remove error by replacing if statement with placeholder values
 - 5m: Add back OR statement and debug bracket and : errors
+- 5m: Run check_win() without errors

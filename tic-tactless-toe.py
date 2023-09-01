@@ -34,6 +34,7 @@ def update_board(row, column, value):
     # user side: python -c "from file_name import function;function()"
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
+    check_win()
 
 def check_valid_move(row, column, value):
     # needs to take input from update_board()
@@ -60,12 +61,13 @@ def start_turn():
     update_board()
 
 def check_win():
+    print("check_win() is running.")
     # horizontal win condition (3 variations)
     # top row
     if board[0][0] == "top left": #using placeholder text
         print("top left here!")
-    elif board[0][0] == "top left" OR board[0][0] == "":
-        print("top left and blank space")
+    elif board[0][0] == "blue" or board[0][0] == "":
+        print("blue and blank space")
     #if (board[0][0] == 'X' OR board[0][0] == 'O'): # AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
         # game_status = 'win_game'
         print('Congratulations! You won!')
