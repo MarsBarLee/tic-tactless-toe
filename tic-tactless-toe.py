@@ -1,7 +1,7 @@
 # Overarching program
 
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
 
 def print_board():
@@ -68,7 +68,7 @@ def check_win():
         print("top left here!")
     elif board[0][0] == "blue" or board[0][0] == "":
         print("blue and blank space")
-    #if (board[0][0] == 'X' OR board[0][0] == 'O'): # AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
+    elif (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
         # game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row

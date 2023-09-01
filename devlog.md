@@ -93,3 +93,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Remove error by replacing if statement with placeholder values
 - 5m: Add back OR statement and debug bracket and : errors
 - 5m: Run check_win() without errors
+- 5m: Use placeholder in starting board to trigger a check_win() condition
+- 5m: Read about comparing one variable with multiple possible values at https://stackoverflow.com/questions/15112125/how-to-test-multiple-variables-for-equality-against-a-single-value
