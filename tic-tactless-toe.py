@@ -72,35 +72,35 @@ def check_win():
         # game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row
-    # elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!')
-    # # bottom row
-    # elif (board[2][0] = 'X' or 'O') & (board[2][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!') # in future, replace with quotes
-    # # vertical win condition (3 variations)
-    # # left column
-    # if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!')
-    # # middle column
-    # elif (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!')
-    # # right column
-    # elif (board[0][2] = 'X' or 'O') & (board[1][2] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!')
-    # # diagonal win conditions (2 variations)
-    # # left-to-right diagonal
-    # if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O'):
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!') 
-    # # right-to-left diagonal
-    # elif (board[0][2] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[0][0] = 'X' or 'O')
-    #     game_status = 'win_game'
-    #     print('Congratulations! You won!') 
+    elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!')
+    # bottom row
+    elif (board[2][0] == 'X' or 'O') and (board[2][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!') # in future, replace with quotes
+    # vertical win condition (3 variations)
+    # left column
+    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!')
+    # middle column
+    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!')
+    # right column
+    elif (board[0][2] == 'X' or 'O') and (board[1][2] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!')
+    # diagonal win conditions (2 variations)
+    # left-to-right diagonal
+    elif (board[0][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!') 
+    # right-to-left diagonal
+    elif (board[0][2] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[0][0] == 'X' or 'O'):
+        game_status = 'win_game'
+        print('Congratulations! You won!') 
 
 class quote_repository:
     # game_status, update a global variable? change to existing dictionary?
@@ -282,13 +282,13 @@ def tic_tactless_toe():
             0 |x |  |  |
             1 |  |x |  |
             2 |  |  |x |
-            if (board[0][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][2] = 'X' or 'O') ...
+            if (board[0][0] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][2] = 'X' or 'O') ...
             veritcal win condition 2
                0, 1, 2
             0 |  |o |  |
             1 |  |o |  |
             2 |  |o |  |
-            if (board[0][1] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[2][1] = 'X' or 'O') ...
+            if (board[0][1] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][1] = 'X' or 'O') ...
     Draw logic
         When all sections of board are filled up without any win conditions
         Filled up: If all section is not " ". Check for all using for loop?

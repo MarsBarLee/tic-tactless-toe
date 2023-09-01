@@ -95,3 +95,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Run check_win() without errors
 - 5m: Use placeholder in starting board to trigger a check_win() condition
 - 5m: Read about comparing one variable with multiple possible values at https://stackoverflow.com/questions/15112125/how-to-test-multiple-variables-for-equality-against-a-single-value
+- Thought: Maybe in future branch, re-implment check_win() with a containment test against a set, eg if 'X' in {board[0][0], board[0][1], board[0][2]}:
+- 5m: Re-add and upate rest of win conditions to correct syntax to check_win and run without errors
