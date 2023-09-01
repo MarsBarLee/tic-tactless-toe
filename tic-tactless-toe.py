@@ -56,13 +56,16 @@ def switch_players_turn():
 
 def start_turn():
     # this will run update_board(), check_valid_move(), switch_player_turn
+    check_valid_move()
     update_board()
 
 def check_win():
     # horizontal win condition (3 variations)
     # top row
-    if (board[0][0] == 'X' OR board[0][0] == 'O') AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
-        game_status = 'win_game'
+    if board[0][0] == "top left": #using placeholder text
+        print("top left here!")
+    #if (board[0][0] == 'X' OR board[0][0] == 'O'): # AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
+        # game_status = 'win_game'
         print('Congratulations! You won!')
     # middle row
     # elif (board[1][0] = 'X' or 'O') & (board[1][1] = 'X' or 'O') & (board[1][2] = 'X' or 'O'):
@@ -145,10 +148,10 @@ def check_draw():
             if column != " ":
                 print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
-                    if filled_section_counter = 9:
-                        game_status = 'draw'
-                        print('The game has come to a draw.')
-                        # restart_game prompt?
+                if filled_section_counter == 9:
+                    game_status = 'draw'
+                    print('The game has come to a draw.')
+                    # restart_game prompt?
             else:
                 print('Empty section') # remove in final
                 # nothing happens
