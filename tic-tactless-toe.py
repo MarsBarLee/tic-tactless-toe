@@ -64,6 +64,8 @@ def check_win():
     # top row
     if board[0][0] == "top left": #using placeholder text
         print("top left here!")
+    elif board[0][0] == "top left" OR board[0][0] == "":
+        print("top left and blank space")
     #if (board[0][0] == 'X' OR board[0][0] == 'O'): # AND (board[0][1] = 'X' or 'O') AND (board[0][2] = 'X' or 'O'):
         # game_status = 'win_game'
         print('Congratulations! You won!')
