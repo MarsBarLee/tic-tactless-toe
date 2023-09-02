@@ -97,3 +97,11 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Read about comparing one variable with multiple possible values at https://stackoverflow.com/questions/15112125/how-to-test-multiple-variables-for-equality-against-a-single-value
 - Thought: Maybe in future branch, re-implment check_win() with a containment test against a set, eg if 'X' in {board[0][0], board[0][1], board[0][2]}:
 - 5m: Re-add and upate rest of win conditions to correct syntax to check_win and run without errors
+
+2023-09-02
+- 5m: Make add_mermaid_js branch
+- 5m: Draw infastructure diagram
+- 5m: Draw infastructure diagram with check_win()
+- 5m: Move forward with 10 minute draft of infastructure diagram, npm install mermaid
+- 5m: Start turning drawn infastructure diagarm into mermaid.js diagram using mermaid.live
+- 5m: Download mermaid.js diagram and add .mermaid file
