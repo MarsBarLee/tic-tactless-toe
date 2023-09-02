@@ -1,10 +1,10 @@
 flowchart TD
     A[start_game] -->|while| B(check_win) --> |true| G(win!)
-    B -->|false| C{start_turn}
+    B -->|false| H[switch_player_turn]
     subgraph game loop
+    H --> C{start_turn}
     C --> D[player_move]
     D --> E[check_valid_move]
     E --> F[update_board]
     F --> B
     end
-  

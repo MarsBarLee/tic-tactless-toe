@@ -105,3 +105,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Move forward with 10 minute draft of infastructure diagram, npm install mermaid
 - 5m: Start turning drawn infastructure diagarm into mermaid.js diagram using mermaid.live
 - 5m: Download mermaid.js diagram and add .mermaid file
+- 5m: Add switch_player_turn to mermaid.js diagram
+- Thought: Need to seperate update_board() into player_turn() and update_board()
