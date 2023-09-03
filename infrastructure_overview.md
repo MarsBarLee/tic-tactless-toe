@@ -25,6 +25,7 @@ Functions
   - quit_game()
   - switch_players_turn()
   - print_board()
+  - update_board()
 - Built-in
   - translation()
   - str.maketrans() 
