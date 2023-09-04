@@ -1,10 +1,12 @@
 # Overarching program
-
+# TODO: For Mars to do, translation dictionary of row, column to array values
+# TODO make player_move be an array
+# TODO Fix logic in isWin
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+# board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
 
-def print_board():
+def print_board(board):
     # print(board[0][0]) # only print value
     print(f"Here is the top left section's value: {board[0][0]}") # with string literal
     # hardcoded example
@@ -22,59 +24,67 @@ def print_board():
 
 def start_game():
     game_status = 'start_game'
+    board = [["","",""], ["","", ""], ["","",""]]
+    isXTurn = True
     # print current board
-    print_board()
+    print_board(board)
+    while (not isWin(board)):
+        player_move = get_player_move()
+        while (not is_valid_move(player_move)):
+            player_move = get_player_move() # Keep asking for the player's move until it is valid
+        board = update_board(board, player_move, isXTurn)
+        isXTurn = not isXTurn
+        
+def get_player_move():
+    print("Enter your move: row, column\n")
+    # TODO: For Mars to do, translation dictionary of row, column to array values
+    player_move = input("Enter your move: row, column\n")
+    # TODO make player_move be an array
+    return player_move
 
-def update_board(row, column, value):
-    check_valid_move(row, column, value)
+def update_board(board, player_move, isXTurn):
     print("Running updated_board()")
-    print_board() # print current board, for testing, remove later
-    board[row][column] = value
-    print_board() # print updated board, replace with print_board() later
+    # print_board() print current board, for testing, remove later
+    if(isXTurn):
+        board[player_move[0]][player_move[1]] = "X"
+    else:
+        board[player_move[0]][player_move[1]] = "O"
+    return board
     # user side: python -c "from file_name import function;function()"
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
-    check_win()
 
-def check_valid_move(row, column, value):
+def is_valid_move(player_move, value):
+    row = player_move[0]
+    column = player_move[1]
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
-    if 0<= row <=2 or 0<= column <=2:
+    if 0<= row <=2 and 0<= column <=2:
         game_status = 'valid_move'
         print('Valid move. Updating the board.')
+        return True
         # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
         # attempt: in update_board(), if valid_move = true, run this section of update_board()...
     else:
         print('Invalid move! Put in your moves, with the correct values.')
+        return False
         # stop the function from running further
 
-def switch_players_turn():
-    game_status = 'ask_player_for_turn'
-    x_player_turn = True # hardcoded for now: future editions, randomize which player starts first?
-    y_player_turn = False
-    # if x_player_turn = ... input received? Then x_player_turn = not x_player turn
-    # if x_player_turn = False: y_player_turn = not y_player_turn
-
-def start_turn():
-    # this will run update_board(), check_valid_move(), switch_player_turn
-    check_valid_move()
-    update_board()
-
-def check_win():
-    print("check_win() is running.")
+def isWin(board):
+    # TODO Fix logic in here
+    print("isWin() is running.")
     # horizontal win condition (3 variations)
     # top row
-    if board[0][0] == "top left": #using placeholder text
-        print("top left here!")
-    elif board[0][0] == "blue" or board[0][0] == "":
-        print("blue and blank space")
-    elif (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
+    isWin = False
+    if (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
         # game_status = 'win_game'
         print('Congratulations! You won!')
+        isWin = True
     # middle row
     elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
+        isWin = True
     # bottom row
     elif (board[2][0] == 'X' or 'O') and (board[2][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
         game_status = 'win_game'
@@ -84,23 +94,29 @@ def check_win():
     elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
+        isWin = True
     # middle column
     elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
+        isWin = True
     # right column
     elif (board[0][2] == 'X' or 'O') and (board[1][2] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
         game_status = 'win_game'
         print('Congratulations! You won!')
+        isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
     elif (board[0][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
         game_status = 'win_game'
-        print('Congratulations! You won!') 
+        print('Congratulations! You won!')
+        isWin = True 
     # right-to-left diagonal
     elif (board[0][2] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[0][0] == 'X' or 'O'):
         game_status = 'win_game'
-        print('Congratulations! You won!') 
+        print('Congratulations! You won!')
+        isWin = True 
+    return isWin
 
 class quote_repository:
     # game_status, update a global variable? change to existing dictionary?
@@ -184,9 +200,9 @@ start_game()
 
 """
   - start()
-  - check_valid_move()
+  - is_valid_move()
   - update_board()
-  - check_win()
+  - isWin()
   - check_draw()
   - restart()
   - quit()
