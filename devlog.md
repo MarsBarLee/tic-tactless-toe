@@ -118,3 +118,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Make issues based on changes to given TODOs from patrick-refactor branch
 - 5m: Start writing PR for patrick-refactor branch
 - 25m: Complete writing PR for patrick-refactor branch
+- 15m: Add additional comments in TODOs

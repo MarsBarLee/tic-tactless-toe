@@ -39,7 +39,8 @@ def get_player_move():
     print("Enter your move: row, column\n")
     # TODO: For Mars to do, translation dictionary of row, column to array values
     player_move = input("Enter your move: row, column\n")
-    # TODO make player_move be an array
+    # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
+    # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
     return player_move
 
 def update_board(board, player_move, isXTurn):
@@ -71,7 +72,7 @@ def is_valid_move(player_move, value):
         # stop the function from running further
 
 def isWin(board):
-    # TODO Fix logic in here
+    # TODO Fix logic in here. Problem: Doesn't need to be XXX to win, with current logic could be XOX 
     print("isWin() is running.")
     # horizontal win condition (3 variations)
     # top row

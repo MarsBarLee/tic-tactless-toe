@@ -31,7 +31,8 @@ Functions
   - str.maketrans() 
   - quit()
   - int()
-  - for loops
+  - input()
+  - while loops
   - if statements
 
 Data structures and variables
