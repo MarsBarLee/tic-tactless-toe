@@ -109,3 +109,12 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add switch_player_turn to mermaid.js diagram
 - Thought: Need to seperate update_board() into player_turn() and update_board()
 - 15m: Make PR, fix merge conflict in devlog.md
+
+2023-09-03
+- 1.5hr: Talk to Patrick about moving to functional programming and creating patrick-refactor branch
+
+2023-09-04
+- 5m: Review changes made in patrick-refactor branch 
+- 5m: Make issues based on changes to given TODOs from patrick-refactor branch
+- 5m: Start writing PR for patrick-refactor branch
+- 25m: Complete writing PR for patrick-refactor branch
