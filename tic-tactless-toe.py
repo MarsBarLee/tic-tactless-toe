@@ -77,11 +77,14 @@ def isWin(board):
     # horizontal win condition (3 variations)
     # top row
     isWin = False
-    if (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
+    if (board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X'):
         # game_status = 'win_game'
         print('Congratulations! You won!')
         isWin = True
-    # if (board[0][0] == 'O' and board[0][1] == 'O' and (board[0][2] == 'X') or (board[0][0] == 'X' and board[0][1] == 'O' and (board[0][2] == 'X')
+    elif (board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O'):
+        # game_status = 'win_game'
+        print('Congratulations! You won!')
+        isWin = True
     # middle row
     elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
         game_status = 'win_game'

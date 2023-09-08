@@ -122,3 +122,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 
 2023-09-08
 - 5m: On isWin/patrick-refactor branch, separate X and O win logic for horizontal win
+- 5m: Make X and O seperate if and elif statements
