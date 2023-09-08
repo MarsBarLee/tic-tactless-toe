@@ -1,9 +1,7 @@
 # Overarching program
 # TODO: For Mars to do, translation dictionary of row, column to array values
 # TODO make player_move be an array
-# TODO Fix logic in isWin
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-# board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
 
 def print_board(board):
