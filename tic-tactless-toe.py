@@ -81,6 +81,7 @@ def isWin(board):
         # game_status = 'win_game'
         print('Congratulations! You won!')
         isWin = True
+    # if (board[0][0] == 'O' and board[0][1] == 'O' and (board[0][2] == 'X') or (board[0][0] == 'X' and board[0][1] == 'O' and (board[0][2] == 'X')
     # middle row
     elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
         game_status = 'win_game'
