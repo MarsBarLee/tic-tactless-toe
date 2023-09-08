@@ -1,9 +1,7 @@
 # Overarching program
 # TODO: For Mars to do, translation dictionary of row, column to array values
 # TODO make player_move be an array
-# TODO Fix logic in isWin
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-# board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
 game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
 
 def print_board(board):
@@ -77,45 +75,45 @@ def isWin(board):
     # horizontal win condition (3 variations)
     # top row
     isWin = False
-    if (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
+    if ((board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X')) or ((board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O')):
         # game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Horizontal win, top row.')
         isWin = True
     # middle row
-    elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
+    elif ((board[1][0] == 'X') and (board[1][1] == 'X') and (board[1][2] == 'X')) or ((board[1][0] == 'O') and (board[1][1] == 'O') and (board[1][2] == 'O')):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Horizontal win, middle row.')
         isWin = True
     # bottom row
-    elif (board[2][0] == 'X' or 'O') and (board[2][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+    elif ((board[2][0] == 'X') and (board[2][1] == 'X') and (board[2][2] == 'X')) or ((board[2][0] == 'O') and (board[2][1] == 'O') and (board[2][2] == 'O')):
         game_status = 'win_game'
-        print('Congratulations! You won!') # in future, replace with quotes
+        print('Congratulations! You won! Horizontal win, bottom row.')
     # vertical win condition (3 variations)
     # left column
-    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
+    elif ((board[0][0] == 'X') and (board[1][0] == 'X') and (board[2][0] == 'X')) or ((board[0][0] == 'O') and (board[1][0] == 'O') and (board[2][0] == 'O')):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Vertical win, left column.')
         isWin = True
     # middle column
-    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
+    elif ((board[0][1] == 'X') and (board[1][1] == 'X') and (board[2][1] == 'X')) or ((board[0][1] == 'O') and (board[1][1] == 'O') and (board[2][1] == 'O')):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Vertical win, middle column.')
         isWin = True
     # right column
-    elif (board[0][2] == 'X' or 'O') and (board[1][2] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+    elif ((board[0][2] == 'X') and (board[1][2] == 'X') and (board[2][2] == 'X')) or ((board[0][2] == 'O') and (board[1][2] == 'O') and (board[2][2] == 'O')):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Vertical win, right column.')
         isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
-    elif (board[0][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
+    elif ((board[0][0] == 'X') and (board[1][1] == 'X') and (board[2][2] == 'X')) or (board[0][0] == 'O') and (board[1][1] == 'O') and (board[2][2] == 'O'):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Diagonal win, left-to-right.')
         isWin = True 
     # right-to-left diagonal
-    elif (board[0][2] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[0][0] == 'X' or 'O'):
+    elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
         game_status = 'win_game'
-        print('Congratulations! You won!')
+        print('Congratulations! You won! Diagonal win, right-to-left')
         isWin = True 
     return isWin
 
@@ -197,7 +195,36 @@ def quit_game():
     print('You have chosen to quit the game. The game will now quit.')
     quit()
 
-start_game()
+def test_suite():
+    # X win
+    # horizontal win
+    isWin([["X","X","X"], ["","", ""], ["","",""]])
+    isWin([["","",""], ["X","X", "X"], ["","",""]])
+    isWin([["","",""], ["","", ""], ["X","X","X"]])    
+    # vertical win
+    isWin([["X","",""], ["X","", ""], ["X","",""]])
+    isWin([["","X",""], ["","X", ""], ["","X",""]])
+    isWin([["","","X"], ["","", "X"], ["","","X"]])
+    # diagonal win
+    isWin([["X","",""], ["","X", ""], ["","","X"]])
+    isWin([["","","X"], ["","X", ""], ["X","",""]])
+    # O win
+    # horizontal win
+    isWin([["O","O","O"], ["","", ""], ["","",""]])
+    isWin([["","",""], ["O","O","O"], ["","",""]])
+    isWin([["","",""], ["","", ""], ["O","O","O"]])    
+    # vertical win
+    isWin([["O","",""], ["O","", ""], ["O","",""]])
+    isWin([["","O",""], ["","O", ""], ["","O",""]])
+    isWin([["","","O"], ["","", "O"], ["","","O"]])
+    # diagonal win
+    isWin([["O","",""], ["","O", ""], ["","","O"]])
+    isWin([["","","O"], ["","O", ""], ["O","",""]])
+
+# start_game()
+# isWin([["X","",""], ["X","", ""], ["X","",""]]) 
+test_suite()
+
 
 """
   - start()
@@ -299,13 +326,13 @@ def tic_tactless_toe():
             0 |x |  |  |
             1 |  |x |  |
             2 |  |  |x |
-            if (board[0][0] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][2] = 'X' or 'O') ...
+            if (board[0][0] = 'X') and (board[1][1] = 'X') and (board[2][2] = 'X') ...
             veritcal win condition 2
                0, 1, 2
             0 |  |o |  |
             1 |  |o |  |
             2 |  |o |  |
-            if (board[0][1] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][1] = 'X' or 'O') ...
+            if (board[0][1] = 'X') and (board[1][1] = 'X') and (board[2][1] = 'X') ...
     Draw logic
         When all sections of board are filled up without any win conditions
         Filled up: If all section is not " ". Check for all using for loop?

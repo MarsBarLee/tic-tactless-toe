@@ -119,3 +119,12 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Start writing PR for patrick-refactor branch
 - 25m: Complete writing PR for patrick-refactor branch
 - 15m: Add additional comments in TODOs
+
+2023-09-08
+- 5m: On isWin/patrick-refactor branch, separate X and O win logic for horizontal win
+- 5m: Make X and O seperate if and elif statements
+- 10m: Update rest of elif statements
+- 5m: Add isWin() with sample board to run
+- 5m: Add test_suite()
+- 5m: Add more specific print strings to test_suit() by win condition
+- 5m: Fix bug in checkWin() for 'O's in horizontal win, bottom row

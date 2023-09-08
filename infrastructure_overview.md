@@ -129,6 +129,10 @@ def tic_tactless_toe():
     Switch players
         Boolean logic? eg x_player is 0, o_player is 1. Or is it x_player's turn? True, False. If x_player turn False, turn o_player's to True
     Win logic
+        board as array values
+            |0,0 |0,1  |0,2 |
+            |1,0 |1,1  |1,2 |
+            |2,0 |2,1  |2,2 |
         example of player x winning board
             c1,c2,c3
         r1 |x |  |o |
