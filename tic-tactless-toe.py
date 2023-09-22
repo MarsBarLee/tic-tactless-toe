@@ -34,11 +34,12 @@ def start_game():
         isXTurn = not isXTurn
         
 def get_player_move():
-    print("Enter your move: row, column\n")
+    # print("Enter your move: row, column\n")
     # TODO: For Mars to do, translation dictionary of row, column to array values
     player_move = input("Enter your move: row, column\n")
     # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
     # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
+    print(f"This the variable player_move: {player_move}")
     return player_move
 
 def update_board(board, player_move, isXTurn):

@@ -1,5 +1,27 @@
 # Infrastructure Overview
 
+## Instruction Manual for Development
+- python -i tic-tactless-toe.py
+  - opens Python repl'
+  - will automatically run tic-tactless-toe.py
+    - which runs test_suite() as of 2023-09-23
+  - testing out get_player_move on 2023-09-23
+    ```
+    player_move = input("Enter your move: row, column\n")
+    # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
+    # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
+    print(f"This the variable player_move: {player_move}")
+    return player_move-
+    ```
+- example of Python repl game
+    ```
+    >>> get_player_move()
+    Enter your move: row, column
+    1,2 # player's input in repl
+    This the variable player_move: 1,2 # print()
+    '1,2' # return value
+    ```
+
 ## Concepts
  Players
   - X player

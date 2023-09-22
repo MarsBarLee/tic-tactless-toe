@@ -128,3 +128,11 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add test_suite()
 - 5m: Add more specific print strings to test_suit() by win condition
 - 5m: Fix bug in checkWin() for 'O's in horizontal win, bottom row
+- 1hr: Implement the 'Wesley Blitz'
+
+2023-09-22
+- 5m: Review set-up after break
+- 5m: Add wesley-blitz to seperate branch
+- 5m: Remember how Python repl and interactive sessions work
+- 10m: Test out get_player_move, update print() to show player's move and return statement
+- 
