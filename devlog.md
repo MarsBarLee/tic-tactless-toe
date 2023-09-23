@@ -137,3 +137,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 10m: Test out get_player_move, update print() to show player's move and return statement
 - 15m: Learn about combining split() and list comprehension to for player_move in get_player_move()
 - 5m: Add split() and list comprehension to for player_move in get_player_move()
+- 5m: Test running game, fix error in get_player_move by removing 'value' parameter

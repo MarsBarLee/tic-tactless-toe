@@ -58,7 +58,7 @@ def update_board(board, player_move, isXTurn):
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
 
-def is_valid_move(player_move, value):
+def is_valid_move(player_move):
     row = player_move[0]
     column = player_move[1]
     # needs to take input from update_board()
@@ -226,9 +226,9 @@ def test_suite():
     isWin([["O","",""], ["","O", ""], ["","","O"]])
     isWin([["","","O"], ["","O", ""], ["O","",""]])
 
-# start_game()
+start_game()
 # isWin([["X","",""], ["X","", ""], ["X","",""]]) 
-test_suite()
+# test_suite()
 
 
 """
