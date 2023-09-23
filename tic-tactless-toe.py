@@ -30,8 +30,8 @@ def start_game():
         print(random.choice(quote_repository['ask_player_for_move']))
         player_move = get_player_move()
         while (not is_valid_move(player_move)):
-            print(random.choice(quote_repository['ask_player_for_move']))
-            player_move = get_player_move() # Keep asking for the player's move until it is valid
+            print(random.choice(quote_repository['invalid_move']))
+            player_move = get_player_move()
         board = update_board(board, player_move, isXTurn)
         print_board(board)
         isXTurn = not isXTurn
@@ -67,13 +67,13 @@ def is_valid_move(player_move):
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
     if 0<= row <=2 and 0<= column <=2:
-        game_status = 'valid_move'
         print('Valid move. Updating the board.')
         return True
         # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
         # attempt: in update_board(), if valid_move = true, run this section of update_board()...
     else:
-        print('Invalid move! Put in your moves, with the correct values.')
+        print(random.choice(quote_repository['invalid_move']))
+        # print('Invalid move! Put in your moves, with the correct values.')
         return False
         # stop the function from running further
 
