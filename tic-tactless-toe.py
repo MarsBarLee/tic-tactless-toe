@@ -85,36 +85,29 @@ def isWin(board):
     # top row
     isWin = False
     if ((board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X')) or ((board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O')):
-        print(random.choice(quote_repository['win']))
         isWin = True
     # middle row
     elif ((board[1][0] == 'X') and (board[1][1] == 'X') and (board[1][2] == 'X')) or ((board[1][0] == 'O') and (board[1][1] == 'O') and (board[1][2] == 'O')):
-        print('Congratulations! You won! Horizontal win, middle row.')
         isWin = True
     # bottom row
     elif ((board[2][0] == 'X') and (board[2][1] == 'X') and (board[2][2] == 'X')) or ((board[2][0] == 'O') and (board[2][1] == 'O') and (board[2][2] == 'O')):
-        print('Congratulations! You won! Horizontal win, bottom row.')
+        isWin = True
     # vertical win condition (3 variations)
     # left column
     elif ((board[0][0] == 'X') and (board[1][0] == 'X') and (board[2][0] == 'X')) or ((board[0][0] == 'O') and (board[1][0] == 'O') and (board[2][0] == 'O')):
-        print('Congratulations! You won! Vertical win, left column.')
         isWin = True
     # middle column
     elif ((board[0][1] == 'X') and (board[1][1] == 'X') and (board[2][1] == 'X')) or ((board[0][1] == 'O') and (board[1][1] == 'O') and (board[2][1] == 'O')):
-        print('Congratulations! You won! Vertical win, middle column.')
         isWin = True
     # right column
     elif ((board[0][2] == 'X') and (board[1][2] == 'X') and (board[2][2] == 'X')) or ((board[0][2] == 'O') and (board[1][2] == 'O') and (board[2][2] == 'O')):
-        print('Congratulations! You won! Vertical win, right column.')
         isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
     elif ((board[0][0] == 'X') and (board[1][1] == 'X') and (board[2][2] == 'X')) or (board[0][0] == 'O') and (board[1][1] == 'O') and (board[2][2] == 'O'):
-        print('Congratulations! You won! Diagonal win, left-to-right.')
         isWin = True 
     # right-to-left diagonal
     elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
-        print('Congratulations! You won! Diagonal win, right-to-left')
         isWin = True 
     return isWin
 
@@ -138,7 +131,7 @@ quote_repository = {
         "Hey, everybody, get a load of this guy here, they won!",
         "Hey, not bad, for once.",
         "Winning can be fun, once you get the hang of it.",
-        "I'm not sure why you kept going, but it worked out in the end."
+        "You've won. I'm not sure why you kept going, but it worked out in the end."
     ],
     "draw": [
         "Despite not being very good, at least you stuck through it to the very end.",

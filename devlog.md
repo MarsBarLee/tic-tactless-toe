@@ -148,3 +148,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add random.choice() for invalid_move
 - 5m: Add random.choice() for quit
 - 5m: Add random.choice() to win and remove old win status
+- 5m: Remove repeating print in isWin() and test printing quote_repository
