@@ -143,4 +143,4 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 10m: Review quote_repository data type and set-up
 - 10m: Propose and discuss new implementatinon of quote_repository using as quote_repository(game_state) and a dictionary where game_state: ["quote 1", 'quote 2", "quote 3"]
 - 5m: Start implemtning quote_repository as dictionary
-- 5m: 
+- 5m: Test random.choice() and import random library

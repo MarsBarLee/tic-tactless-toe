@@ -2,7 +2,7 @@
 # TODO: For Mars to do, translation dictionary of row, column to array values
 # TODO make player_move be an array
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
+import random
 
 def print_board(board):
     # print(board[0][0]) # only print value
