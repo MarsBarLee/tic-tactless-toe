@@ -40,6 +40,10 @@ def get_player_move():
     # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
     # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
     print(f"This the variable player_move: {player_move}")
+    print(f"This the data type of player_move: {type(player_move)}")
+    player_move = [int(x) for x in player_move.split(",")]
+    print(f"This the variable player_move after int(): {player_move}")
+    print(f"This the data type of player_move after int(): {type(player_move)}")
     return player_move
 
 def update_board(board, player_move, isXTurn):
@@ -54,7 +58,7 @@ def update_board(board, player_move, isXTurn):
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
 
-def is_valid_move(player_move, value):
+def is_valid_move(player_move):
     row = player_move[0]
     column = player_move[1]
     # needs to take input from update_board()
@@ -222,9 +226,9 @@ def test_suite():
     isWin([["O","",""], ["","O", ""], ["","","O"]])
     isWin([["","","O"], ["","O", ""], ["O","",""]])
 
-# start_game()
+start_game()
 # isWin([["X","",""], ["X","", ""], ["X","",""]]) 
-test_suite()
+# test_suite()
 
 
 """

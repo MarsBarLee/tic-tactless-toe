@@ -24,3 +24,22 @@ def check_win():
     if (board[0][0] = 'X' or 'O') & (board[0][1] = 'X' or 'O') & (board[0][2] = 'X' or 'O'):
 Error: "(" was not closed
 Reason: 
+---
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File ".\tic-tactless-toe.py", line 44, in get_player_move
+    player_move = int(player_move)
+ValueError: invalid literal for int() with base 10: '1,2
+Reason: Cannot apply int() function to string '1,2' into 1 and 2 intergers.
+int() would work on '54' to 54 intereger, but is thrown off by the comma
+Solution: To remove the comma, we can use split()
+text.split(",")
+Result: ['1','2']
+
+List Comprehension: https://blog.finxter.com/how-to-convert-a-string-list-to-an-integer-list-in-python/#:~:text=The%20most%20Pythonic%20way%20to,x)%20built%2Din%20function.
+
+split() and list comprehension in one line
+text = "1,2"
+new_text = [int(x) for x in text.split(",")]
+print(new_text)
