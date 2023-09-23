@@ -109,3 +109,43 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Add switch_player_turn to mermaid.js diagram
 - Thought: Need to seperate update_board() into player_turn() and update_board()
 - 15m: Make PR, fix merge conflict in devlog.md
+
+2023-09-03
+- 1.5hr: Talk to Patrick about moving to functional programming and creating patrick-refactor branch
+
+2023-09-04
+- 5m: Review changes made in patrick-refactor branch 
+- 5m: Make issues based on changes to given TODOs from patrick-refactor branch
+- 5m: Start writing PR for patrick-refactor branch
+- 25m: Complete writing PR for patrick-refactor branch
+- 15m: Add additional comments in TODOs
+
+2023-09-08
+- 5m: On isWin/patrick-refactor branch, separate X and O win logic for horizontal win
+- 5m: Make X and O seperate if and elif statements
+- 10m: Update rest of elif statements
+- 5m: Add isWin() with sample board to run
+- 5m: Add test_suite()
+- 5m: Add more specific print strings to test_suit() by win condition
+- 5m: Fix bug in checkWin() for 'O's in horizontal win, bottom row
+- 1hr: Implement the 'Wesley Blitz'
+
+2023-09-22
+- 5m: Review set-up after break
+- 5m: Add wesley-blitz to seperate branch
+- 5m: Remember how Python repl and interactive sessions work
+- 10m: Test out get_player_move, update print() to show player's move and return statement
+- 15m: Learn about combining split() and list comprehension to for player_move in get_player_move()
+- 5m: Add split() and list comprehension to for player_move in get_player_move()
+- 5m: Test running game, fix error in get_player_move by removing 'value' parameter
+- 15: Write PR for merging get_player_move() branch into patrick_refactor branch
+- 5m: Add print_board() to start_game(), decide on next feature to implement
+- 10m: Review quote_repository data type and set-up
+- 10m: Propose and discuss new implementatinon of quote_repository using as quote_repository(game_state) and a dictionary where game_state: ["quote 1", 'quote 2", "quote 3"]
+- 5m: Start implemtning quote_repository as dictionary
+- 5m: Test random.choice() and import random library
+- 5m: Add random.choice() and access value in dictionary
+- 5m: Add random.choice() for invalid_move
+- 5m: Add random.choice() for quit
+- 5m: Add random.choice() to win and remove old win status
+- 5m: Remove repeating print in isWin() and test printing quote_repository

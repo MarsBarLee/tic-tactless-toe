@@ -1,10 +1,10 @@
 # Overarching program
-
+# TODO: For Mars to do, translation dictionary of row, column to array values
+# TODO make player_move be an array
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-board = [["X","X", "X"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
+import random
 
-def print_board():
+def print_board(board):
     # print(board[0][0]) # only print value
     print(f"Here is the top left section's value: {board[0][0]}") # with string literal
     # hardcoded example
@@ -21,128 +21,134 @@ def print_board():
     )
 
 def start_game():
-    game_status = 'start_game'
-    # print current board
-    print_board()
+    print(random.choice(quote_repository['start_game']))
+    board = [["","",""], ["","", ""], ["","",""]]
+    isXTurn = True
+    print_board(board)
+    while (not isWin(board)):
+        print(random.choice(quote_repository['ask_player_for_move']))
+        player_move = get_player_move()
+        while (not is_valid_move(player_move)):
+            print(random.choice(quote_repository['invalid_move']))
+            player_move = get_player_move()
+        board = update_board(board, player_move, isXTurn)
+        print_board(board)
+        # if isWin() and it is the player's turn
+        isXTurn = not isXTurn
+    print(random.choice(quote_repository['win']))
+        
+def get_player_move():
+    # print("Enter your move: row, column\n")
+    # TODO: For Mars to do, translation dictionary of row, column to array values
+    player_move = input("Enter your move: row, column\n")
+    # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
+    # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
+    print(f"This the variable player_move: {player_move}")
+    print(f"This the data type of player_move: {type(player_move)}")
+    player_move = [int(x) for x in player_move.split(",")]
+    print(f"This the variable player_move after int(): {player_move}")
+    print(f"This the data type of player_move after int(): {type(player_move)}")
+    return player_move
 
-def update_board(row, column, value):
-    check_valid_move(row, column, value)
+def update_board(board, player_move, isXTurn):
     print("Running updated_board()")
-    print_board() # print current board, for testing, remove later
-    board[row][column] = value
-    print_board() # print updated board, replace with print_board() later
+    # print_board() print current board, for testing, remove later
+    if(isXTurn):
+        board[player_move[0]][player_move[1]] = "X"
+    else:
+        board[player_move[0]][player_move[1]] = "O"
+    return board
     # user side: python -c "from file_name import function;function()"
     # user side: python -c 'import tic-tacless-toe; print tic-tactless-toe.update_board()'
     # python3 -i file_name.py aka python3 -i tic-tactless-toe.py
-    check_win()
 
-def check_valid_move(row, column, value):
+def is_valid_move(player_move):
+    row = player_move[0]
+    column = player_move[1]
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
-    if 0<= row <=2 or 0<= column <=2:
-        game_status = 'valid_move'
+    if 0<= row <=2 and 0<= column <=2:
         print('Valid move. Updating the board.')
+        return True
         # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
         # attempt: in update_board(), if valid_move = true, run this section of update_board()...
     else:
-        print('Invalid move! Put in your moves, with the correct values.')
+        print(random.choice(quote_repository['invalid_move']))
+        # print('Invalid move! Put in your moves, with the correct values.')
+        return False
         # stop the function from running further
 
-def switch_players_turn():
-    game_status = 'ask_player_for_turn'
-    x_player_turn = True # hardcoded for now: future editions, randomize which player starts first?
-    y_player_turn = False
-    # if x_player_turn = ... input received? Then x_player_turn = not x_player turn
-    # if x_player_turn = False: y_player_turn = not y_player_turn
-
-def start_turn():
-    # this will run update_board(), check_valid_move(), switch_player_turn
-    check_valid_move()
-    update_board()
-
-def check_win():
-    print("check_win() is running.")
+def isWin(board):
+    # TODO Fix logic in here. Problem: Doesn't need to be XXX to win, with current logic could be XOX 
+    print("isWin() is running.")
     # horizontal win condition (3 variations)
     # top row
-    if board[0][0] == "top left": #using placeholder text
-        print("top left here!")
-    elif board[0][0] == "blue" or board[0][0] == "":
-        print("blue and blank space")
-    elif (board[0][0] == 'X' or board[0][0] == 'O') and (board[0][1] == 'X' or board[0][1] == 'O') and (board[0][2] == 'X' or board[0][2] == 'O'):
-        # game_status = 'win_game'
-        print('Congratulations! You won!')
+    isWin = False
+    if ((board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X')) or ((board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O')):
+        isWin = True
     # middle row
-    elif (board[1][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[1][2] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
+    elif ((board[1][0] == 'X') and (board[1][1] == 'X') and (board[1][2] == 'X')) or ((board[1][0] == 'O') and (board[1][1] == 'O') and (board[1][2] == 'O')):
+        isWin = True
     # bottom row
-    elif (board[2][0] == 'X' or 'O') and (board[2][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!') # in future, replace with quotes
+    elif ((board[2][0] == 'X') and (board[2][1] == 'X') and (board[2][2] == 'X')) or ((board[2][0] == 'O') and (board[2][1] == 'O') and (board[2][2] == 'O')):
+        isWin = True
     # vertical win condition (3 variations)
     # left column
-    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
+    elif ((board[0][0] == 'X') and (board[1][0] == 'X') and (board[2][0] == 'X')) or ((board[0][0] == 'O') and (board[1][0] == 'O') and (board[2][0] == 'O')):
+        isWin = True
     # middle column
-    elif (board[0][1] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][1] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
+    elif ((board[0][1] == 'X') and (board[1][1] == 'X') and (board[2][1] == 'X')) or ((board[0][1] == 'O') and (board[1][1] == 'O') and (board[2][1] == 'O')):
+        isWin = True
     # right column
-    elif (board[0][2] == 'X' or 'O') and (board[1][2] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!')
+    elif ((board[0][2] == 'X') and (board[1][2] == 'X') and (board[2][2] == 'X')) or ((board[0][2] == 'O') and (board[1][2] == 'O') and (board[2][2] == 'O')):
+        isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
-    elif (board[0][0] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[2][2] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!') 
+    elif ((board[0][0] == 'X') and (board[1][1] == 'X') and (board[2][2] == 'X')) or (board[0][0] == 'O') and (board[1][1] == 'O') and (board[2][2] == 'O'):
+        isWin = True 
     # right-to-left diagonal
-    elif (board[0][2] == 'X' or 'O') and (board[1][1] == 'X' or 'O') and (board[0][0] == 'X' or 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won!') 
+    elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
+        isWin = True 
+    return isWin
 
-class quote_repository:
-    # game_status, update a global variable? change to existing dictionary?
-    # activate quote depending on game status. if game_status = start_game
-    start_game = {
-        "Welcome, I guess. Why you started, I don't even know."
-        "Welcome. I don't need to explain tic-tac-toe to you, do I?"
+quote_repository = {
+    "start_game": [
+        "Welcome, I guess. Why you started, I don't even know.",
+        "Welcome. I don't need to explain tic-tac-toe to you, do I?",
         "Welcome. You might not know, but tic-tac-toe is a pretty simple game."
-    }
-    ask_player_for_move = {
+    ],
+    "ask_player_for_move": [
         "This is the part where you keep trying to not lose."
-        "That move didn't totally suck!"
+        "That move didn't totally suck!",
         "They say the only thing you can do is keep going. So... keep going?"
-    }
-    invalid_move ={
-        "Hey genius. That's an invalid move."
-        "That's not going to work. Try better."
+    ],
+    "invalid_move": [
+        "Hey genius. That's an invalid move.",
+        "That's not going to work. Try better.",
         "Do you even know how to play a simple game like tic-tac-toe?"
-    }
-    win_game = {
-        "Hey, everybody, get a load of this guy here, they won!"
-        "Hey, not bad, for once."
-        "Winning can be fun, once you get the hang of it."
-        "I'm not sure why you kept going, but it worked out in the end."
-    }
-    draw = {
-        "Despite not being very good, at least you stuck through it to the very end."
-        "Sometimes things are a dead-end. Like this. And many, many other things of yours."
+    ],
+    "win": [
+        "Hey, everybody, get a load of this guy here, they won!",
+        "Hey, not bad, for once.",
+        "Winning can be fun, once you get the hang of it.",
+        "You've won. I'm not sure why you kept going, but it worked out in the end."
+    ],
+    "draw": [
+        "Despite not being very good, at least you stuck through it to the very end.",
+        "Sometimes things are a dead-end. Like this. And many, many other things of yours.",
         "You really are playing at the edge of your abilities."
-    }
-    restart = {
-        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)."
-        "If first you don't succeed... restart many more times."
+    ],
+    "restart": [
+        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different).",
+        "If first you don't succeed... restart many more times.",
         "Yeah, let's pretend that last play didn't happen."
-    }
-    quit = {
-        "You weren't getting anywhere close to winning anyway."
-        "At least you're aware that you're not that good."
+    ],
+    "quit": [
+        "You weren't getting anywhere close to winning anyway.",
+        "At least you're aware that you're not that good.",
         "Come back when you're more... capable."
-    }
-
-quote_repository = quote_repository() # make a object instance of the class quote_repositor
+    ]
+}
 
 filled_section_counter = 0
 
@@ -153,40 +159,60 @@ def check_draw():
                 print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
                 if filled_section_counter == 9:
-                    game_status = 'draw'
-                    print('The game has come to a draw.')
-                    # restart_game prompt?
+                    print(random.choice(quote_repository['draw']))
+                    # print('The game has come to a draw.')
+                    start_game()
             else:
                 print('Empty section') # remove in final
                 # nothing happens
 
 def restart():
     # when the player input the restart command
-    game_status = 'restart'
-    print('You have chosen to restart the game. The game will now restart.')
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a win
-    game_status = 'restart'
-    print('A player has won. The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a down
-    game_status = 'restart'
-    print('There is a draw. Nobody wins! The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+    print(random.choice(quote_repository['restart']))
+    start_game()
 
 def quit_game():
     # when the player input the quit command
-    game_status = 'quit'
-    print('You have chosen to quit the game. The game will now quit.')
+    print(random.choice(quote_repository['quit']))
+    # print('You have chosen to quit the game. The game will now quit.')
     quit()
 
+def test_suite():
+    # X win
+    # horizontal win
+    isWin([["X","X","X"], ["","", ""], ["","",""]])
+    isWin([["","",""], ["X","X", "X"], ["","",""]])
+    isWin([["","",""], ["","", ""], ["X","X","X"]])    
+    # vertical win
+    isWin([["X","",""], ["X","", ""], ["X","",""]])
+    isWin([["","X",""], ["","X", ""], ["","X",""]])
+    isWin([["","","X"], ["","", "X"], ["","","X"]])
+    # diagonal win
+    isWin([["X","",""], ["","X", ""], ["","","X"]])
+    isWin([["","","X"], ["","X", ""], ["X","",""]])
+    # O win
+    # horizontal win
+    isWin([["O","O","O"], ["","", ""], ["","",""]])
+    isWin([["","",""], ["O","O","O"], ["","",""]])
+    isWin([["","",""], ["","", ""], ["O","O","O"]])    
+    # vertical win
+    isWin([["O","",""], ["O","", ""], ["O","",""]])
+    isWin([["","O",""], ["","O", ""], ["","O",""]])
+    isWin([["","","O"], ["","", "O"], ["","","O"]])
+    # diagonal win
+    isWin([["O","",""], ["","O", ""], ["","","O"]])
+    isWin([["","","O"], ["","O", ""], ["O","",""]])
+
 start_game()
+# isWin([["X","",""], ["X","", ""], ["X","",""]]) 
+# test_suite()
+
 
 """
   - start()
-  - check_valid_move()
+  - is_valid_move()
   - update_board()
-  - check_win()
+  - isWin()
   - check_draw()
   - restart()
   - quit()
@@ -282,13 +308,13 @@ def tic_tactless_toe():
             0 |x |  |  |
             1 |  |x |  |
             2 |  |  |x |
-            if (board[0][0] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][2] = 'X' or 'O') ...
+            if (board[0][0] = 'X') and (board[1][1] = 'X') and (board[2][2] = 'X') ...
             veritcal win condition 2
                0, 1, 2
             0 |  |o |  |
             1 |  |o |  |
             2 |  |o |  |
-            if (board[0][1] = 'X' or 'O') and (board[1][1] = 'X' or 'O') and (board[2][1] = 'X' or 'O') ...
+            if (board[0][1] = 'X') and (board[1][1] = 'X') and (board[2][1] = 'X') ...
     Draw logic
         When all sections of board are filled up without any win conditions
         Filled up: If all section is not " ". Check for all using for loop?
