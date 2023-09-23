@@ -40,6 +40,10 @@ def get_player_move():
     # TODO make player_move be an array, eg player_move = [2,2] aka bottom right, because input returns a string
     # player_move is used in update_board(), board[player_move[0]][player_move[1]] = "X"
     print(f"This the variable player_move: {player_move}")
+    print(f"This the data type of player_move: {type(player_move)}")
+    player_move = [int(x) for x in player_move.split(",")]
+    print(f"This the variable player_move after int(): {player_move}")
+    print(f"This the data type of player_move after int(): {type(player_move)}")
     return player_move
 
 def update_board(board, player_move, isXTurn):
