@@ -24,7 +24,6 @@ def start_game():
     print(random.choice(quote_repository['start_game']))
     board = [["","",""], ["","", ""], ["","",""]]
     isXTurn = True
-    # print current board
     print_board(board)
     while (not isWin(board)):
         print(random.choice(quote_repository['ask_player_for_move']))
@@ -34,7 +33,9 @@ def start_game():
             player_move = get_player_move()
         board = update_board(board, player_move, isXTurn)
         print_board(board)
+        # if isWin() and it is the player's turn
         isXTurn = not isXTurn
+    print(random.choice(quote_repository['win']))
         
 def get_player_move():
     # print("Enter your move: row, column\n")
@@ -84,43 +85,35 @@ def isWin(board):
     # top row
     isWin = False
     if ((board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X')) or ((board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O')):
-        # game_status = 'win_game'
-        print('Congratulations! You won! Horizontal win, top row.')
+        print(random.choice(quote_repository['win']))
         isWin = True
     # middle row
     elif ((board[1][0] == 'X') and (board[1][1] == 'X') and (board[1][2] == 'X')) or ((board[1][0] == 'O') and (board[1][1] == 'O') and (board[1][2] == 'O')):
-        game_status = 'win_game'
         print('Congratulations! You won! Horizontal win, middle row.')
         isWin = True
     # bottom row
     elif ((board[2][0] == 'X') and (board[2][1] == 'X') and (board[2][2] == 'X')) or ((board[2][0] == 'O') and (board[2][1] == 'O') and (board[2][2] == 'O')):
-        game_status = 'win_game'
         print('Congratulations! You won! Horizontal win, bottom row.')
     # vertical win condition (3 variations)
     # left column
     elif ((board[0][0] == 'X') and (board[1][0] == 'X') and (board[2][0] == 'X')) or ((board[0][0] == 'O') and (board[1][0] == 'O') and (board[2][0] == 'O')):
-        game_status = 'win_game'
         print('Congratulations! You won! Vertical win, left column.')
         isWin = True
     # middle column
     elif ((board[0][1] == 'X') and (board[1][1] == 'X') and (board[2][1] == 'X')) or ((board[0][1] == 'O') and (board[1][1] == 'O') and (board[2][1] == 'O')):
-        game_status = 'win_game'
         print('Congratulations! You won! Vertical win, middle column.')
         isWin = True
     # right column
     elif ((board[0][2] == 'X') and (board[1][2] == 'X') and (board[2][2] == 'X')) or ((board[0][2] == 'O') and (board[1][2] == 'O') and (board[2][2] == 'O')):
-        game_status = 'win_game'
         print('Congratulations! You won! Vertical win, right column.')
         isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
     elif ((board[0][0] == 'X') and (board[1][1] == 'X') and (board[2][2] == 'X')) or (board[0][0] == 'O') and (board[1][1] == 'O') and (board[2][2] == 'O'):
-        game_status = 'win_game'
         print('Congratulations! You won! Diagonal win, left-to-right.')
         isWin = True 
     # right-to-left diagonal
     elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
-        game_status = 'win_game'
         print('Congratulations! You won! Diagonal win, right-to-left')
         isWin = True 
     return isWin
@@ -141,7 +134,7 @@ quote_repository = {
         "That's not going to work. Try better.",
         "Do you even know how to play a simple game like tic-tac-toe?"
     ],
-    "win_game": [
+    "win": [
         "Hey, everybody, get a load of this guy here, they won!",
         "Hey, not bad, for once.",
         "Winning can be fun, once you get the hang of it.",
@@ -173,31 +166,22 @@ def check_draw():
                 print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
                 if filled_section_counter == 9:
-                    game_status = 'draw'
-                    print('The game has come to a draw.')
-                    # restart_game prompt?
+                    print(random.choice(quote_repository['draw']))
+                    # print('The game has come to a draw.')
+                    start_game()
             else:
                 print('Empty section') # remove in final
                 # nothing happens
 
 def restart():
     # when the player input the restart command
-    game_status = 'restart'
-    print('You have chosen to restart the game. The game will now restart.')
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a win
-    game_status = 'restart'
-    print('A player has won. The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a down
-    game_status = 'restart'
-    print('There is a draw. Nobody wins! The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+    print(random.choice(quote_repository['restart']))
+    start_game()
 
 def quit_game():
     # when the player input the quit command
-    game_status = 'quit'
-    print('You have chosen to quit the game. The game will now quit.')
+    print(random.choice(quote_repository['quit']))
+    # print('You have chosen to quit the game. The game will now quit.')
     quit()
 
 def test_suite():

@@ -146,3 +146,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 5m: Test random.choice() and import random library
 - 5m: Add random.choice() and access value in dictionary
 - 5m: Add random.choice() for invalid_move
+- 5m: Add random.choice() for quit
+- 5m: Add random.choice() to win and remove old win status
