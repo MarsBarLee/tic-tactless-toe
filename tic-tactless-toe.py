@@ -2,7 +2,7 @@
 # TODO: For Mars to do, translation dictionary of row, column to array values
 # TODO make player_move be an array
 # board = [[" "," ", " "], [" "," ", " "], [" "," ", " "]] # final board
-game_status = "start_game" # not sure what to start game with. may want to change from variable to dictionary?
+import random
 
 def print_board(board):
     # print(board[0][0]) # only print value
@@ -21,18 +21,21 @@ def print_board(board):
     )
 
 def start_game():
-    game_status = 'start_game'
+    print(random.choice(quote_repository['start_game']))
     board = [["","",""], ["","", ""], ["","",""]]
     isXTurn = True
-    # print current board
     print_board(board)
     while (not isWin(board)):
+        print(random.choice(quote_repository['ask_player_for_move']))
         player_move = get_player_move()
         while (not is_valid_move(player_move)):
-            player_move = get_player_move() # Keep asking for the player's move until it is valid
+            print(random.choice(quote_repository['invalid_move']))
+            player_move = get_player_move()
         board = update_board(board, player_move, isXTurn)
         print_board(board)
+        # if isWin() and it is the player's turn
         isXTurn = not isXTurn
+    print(random.choice(quote_repository['win']))
         
 def get_player_move():
     # print("Enter your move: row, column\n")
@@ -65,13 +68,13 @@ def is_valid_move(player_move):
     # needs to take input from update_board()
     # check if in bound of board[row][column], board[0-2][0-2]
     if 0<= row <=2 and 0<= column <=2:
-        game_status = 'valid_move'
         print('Valid move. Updating the board.')
         return True
         # let rest of update_function() run... move check_valued_move() to update_function()? But want to keep modular
         # attempt: in update_board(), if valid_move = true, run this section of update_board()...
     else:
-        print('Invalid move! Put in your moves, with the correct values.')
+        print(random.choice(quote_repository['invalid_move']))
+        # print('Invalid move! Put in your moves, with the correct values.')
         return False
         # stop the function from running further
 
@@ -82,88 +85,70 @@ def isWin(board):
     # top row
     isWin = False
     if ((board[0][0] == 'X') and (board[0][1] == 'X') and (board[0][2] == 'X')) or ((board[0][0] == 'O') and (board[0][1] == 'O') and (board[0][2] == 'O')):
-        # game_status = 'win_game'
-        print('Congratulations! You won! Horizontal win, top row.')
         isWin = True
     # middle row
     elif ((board[1][0] == 'X') and (board[1][1] == 'X') and (board[1][2] == 'X')) or ((board[1][0] == 'O') and (board[1][1] == 'O') and (board[1][2] == 'O')):
-        game_status = 'win_game'
-        print('Congratulations! You won! Horizontal win, middle row.')
         isWin = True
     # bottom row
     elif ((board[2][0] == 'X') and (board[2][1] == 'X') and (board[2][2] == 'X')) or ((board[2][0] == 'O') and (board[2][1] == 'O') and (board[2][2] == 'O')):
-        game_status = 'win_game'
-        print('Congratulations! You won! Horizontal win, bottom row.')
+        isWin = True
     # vertical win condition (3 variations)
     # left column
     elif ((board[0][0] == 'X') and (board[1][0] == 'X') and (board[2][0] == 'X')) or ((board[0][0] == 'O') and (board[1][0] == 'O') and (board[2][0] == 'O')):
-        game_status = 'win_game'
-        print('Congratulations! You won! Vertical win, left column.')
         isWin = True
     # middle column
     elif ((board[0][1] == 'X') and (board[1][1] == 'X') and (board[2][1] == 'X')) or ((board[0][1] == 'O') and (board[1][1] == 'O') and (board[2][1] == 'O')):
-        game_status = 'win_game'
-        print('Congratulations! You won! Vertical win, middle column.')
         isWin = True
     # right column
     elif ((board[0][2] == 'X') and (board[1][2] == 'X') and (board[2][2] == 'X')) or ((board[0][2] == 'O') and (board[1][2] == 'O') and (board[2][2] == 'O')):
-        game_status = 'win_game'
-        print('Congratulations! You won! Vertical win, right column.')
         isWin = True
     # diagonal win conditions (2 variations)
     # left-to-right diagonal
     elif ((board[0][0] == 'X') and (board[1][1] == 'X') and (board[2][2] == 'X')) or (board[0][0] == 'O') and (board[1][1] == 'O') and (board[2][2] == 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won! Diagonal win, left-to-right.')
         isWin = True 
     # right-to-left diagonal
     elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
-        game_status = 'win_game'
-        print('Congratulations! You won! Diagonal win, right-to-left')
         isWin = True 
     return isWin
 
-class quote_repository:
-    # game_status, update a global variable? change to existing dictionary?
-    # activate quote depending on game status. if game_status = start_game
-    start_game = {
-        "Welcome, I guess. Why you started, I don't even know."
-        "Welcome. I don't need to explain tic-tac-toe to you, do I?"
+quote_repository = {
+    "start_game": [
+        "Welcome, I guess. Why you started, I don't even know.",
+        "Welcome. I don't need to explain tic-tac-toe to you, do I?",
         "Welcome. You might not know, but tic-tac-toe is a pretty simple game."
-    }
-    ask_player_for_move = {
+    ],
+    "ask_player_for_move": [
         "This is the part where you keep trying to not lose."
-        "That move didn't totally suck!"
+        "That move didn't totally suck!",
         "They say the only thing you can do is keep going. So... keep going?"
-    }
-    invalid_move ={
-        "Hey genius. That's an invalid move."
-        "That's not going to work. Try better."
+    ],
+    "invalid_move": [
+        "Hey genius. That's an invalid move.",
+        "That's not going to work. Try better.",
         "Do you even know how to play a simple game like tic-tac-toe?"
-    }
-    win_game = {
-        "Hey, everybody, get a load of this guy here, they won!"
-        "Hey, not bad, for once."
-        "Winning can be fun, once you get the hang of it."
-        "I'm not sure why you kept going, but it worked out in the end."
-    }
-    draw = {
-        "Despite not being very good, at least you stuck through it to the very end."
-        "Sometimes things are a dead-end. Like this. And many, many other things of yours."
+    ],
+    "win": [
+        "Hey, everybody, get a load of this guy here, they won!",
+        "Hey, not bad, for once.",
+        "Winning can be fun, once you get the hang of it.",
+        "You've won. I'm not sure why you kept going, but it worked out in the end."
+    ],
+    "draw": [
+        "Despite not being very good, at least you stuck through it to the very end.",
+        "Sometimes things are a dead-end. Like this. And many, many other things of yours.",
         "You really are playing at the edge of your abilities."
-    }
-    restart = {
-        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)."
-        "If first you don't succeed... restart many more times."
+    ],
+    "restart": [
+        "Yeah, you didn't play great. Might as well try again (but I don't know what would be different).",
+        "If first you don't succeed... restart many more times.",
         "Yeah, let's pretend that last play didn't happen."
-    }
-    quit = {
-        "You weren't getting anywhere close to winning anyway."
-        "At least you're aware that you're not that good."
+    ],
+    "quit": [
+        "You weren't getting anywhere close to winning anyway.",
+        "At least you're aware that you're not that good.",
         "Come back when you're more... capable."
-    }
-
-quote_repository = quote_repository() # make a object instance of the class quote_repositor
+    ]
+}
 
 filled_section_counter = 0
 
@@ -174,31 +159,22 @@ def check_draw():
                 print('Filled section, increase filled_section_counter by one') # remove in final
                 filled_section_counter += 1
                 if filled_section_counter == 9:
-                    game_status = 'draw'
-                    print('The game has come to a draw.')
-                    # restart_game prompt?
+                    print(random.choice(quote_repository['draw']))
+                    # print('The game has come to a draw.')
+                    start_game()
             else:
                 print('Empty section') # remove in final
                 # nothing happens
 
 def restart():
     # when the player input the restart command
-    game_status = 'restart'
-    print('You have chosen to restart the game. The game will now restart.')
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a win
-    game_status = 'restart'
-    print('A player has won. The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
-    # when game has reached a down
-    game_status = 'restart'
-    print('There is a draw. Nobody wins! The game will now restart.') # change to X/Y player has won
-    board = [["top left","top middle", "top right"], ["middle left","middle middle", "middle right"], ["bottom left","bottom middle", "bottom right"]]  # testing board, not final values
+    print(random.choice(quote_repository['restart']))
+    start_game()
 
 def quit_game():
     # when the player input the quit command
-    game_status = 'quit'
-    print('You have chosen to quit the game. The game will now quit.')
+    print(random.choice(quote_repository['quit']))
+    # print('You have chosen to quit the game. The game will now quit.')
     quit()
 
 def test_suite():
