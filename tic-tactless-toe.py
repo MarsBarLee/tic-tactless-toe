@@ -123,47 +123,44 @@ def isWin(board):
         isWin = True 
     return isWin
 
-class quote_repository:
-    # game_status, update a global variable? change to existing dictionary?
-    # activate quote depending on game status. if game_status = start_game
-    start_game = {
-        "Welcome, I guess. Why you started, I don't even know."
-        "Welcome. I don't need to explain tic-tac-toe to you, do I?"
+quote_repository = {
+    "start_game": [
+        "Welcome, I guess. Why you started, I don't even know.",
+        "Welcome. I don't need to explain tic-tac-toe to you, do I?",
         "Welcome. You might not know, but tic-tac-toe is a pretty simple game."
-    }
-    ask_player_for_move = {
+    ],
+    "ask_player_for_move": [
         "This is the part where you keep trying to not lose."
         "That move didn't totally suck!"
         "They say the only thing you can do is keep going. So... keep going?"
-    }
-    invalid_move ={
+    ],
+    "invalid_move": [
         "Hey genius. That's an invalid move."
         "That's not going to work. Try better."
         "Do you even know how to play a simple game like tic-tac-toe?"
-    }
-    win_game = {
+    ],
+    "win_game": [
         "Hey, everybody, get a load of this guy here, they won!"
         "Hey, not bad, for once."
         "Winning can be fun, once you get the hang of it."
         "I'm not sure why you kept going, but it worked out in the end."
-    }
-    draw = {
+    ],
+    "draw": [
         "Despite not being very good, at least you stuck through it to the very end."
         "Sometimes things are a dead-end. Like this. And many, many other things of yours."
         "You really are playing at the edge of your abilities."
-    }
-    restart = {
+    ],
+    "restart": [
         "Yeah, you didn't play great. Might as well try again (but I don't know what would be different)."
         "If first you don't succeed... restart many more times."
         "Yeah, let's pretend that last play didn't happen."
-    }
-    quit = {
+    ],
+    "quit": [
         "You weren't getting anywhere close to winning anyway."
         "At least you're aware that you're not that good."
         "Come back when you're more... capable."
-    }
-
-quote_repository = quote_repository() # make a object instance of the class quote_repositor
+    ]
+}
 
 filled_section_counter = 0
 
