@@ -21,7 +21,8 @@ def print_board(board):
     )
 
 def start_game():
-    game_status = 'start_game'
+    print(quote_repository['start_game'])
+    print(random.choice(quote_repository['start_game']))
     board = [["","",""], ["","", ""], ["","",""]]
     isXTurn = True
     # print current board
