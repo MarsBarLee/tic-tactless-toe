@@ -31,6 +31,7 @@ def start_game():
         while (not is_valid_move(player_move)):
             player_move = get_player_move() # Keep asking for the player's move until it is valid
         board = update_board(board, player_move, isXTurn)
+        print_board(board)
         isXTurn = not isXTurn
         
 def get_player_move():

@@ -138,3 +138,5 @@ a tic-tac-toe game that insults you at every turn. winning does not guarantee ex
 - 15m: Learn about combining split() and list comprehension to for player_move in get_player_move()
 - 5m: Add split() and list comprehension to for player_move in get_player_move()
 - 5m: Test running game, fix error in get_player_move by removing 'value' parameter
+- 15: Write PR for merging get_player_move() branch into patrick_refactor branch
+- 5m: Add print_board() to start_game(), decide on next feature to implement
