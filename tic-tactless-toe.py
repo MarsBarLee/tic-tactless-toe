@@ -1,3 +1,4 @@
+#a tic-tac-toe game that insults you at every turn. winning does not guarantee exemption.
 import random
 
 def print_board(board):
