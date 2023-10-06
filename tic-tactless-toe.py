@@ -3,9 +3,9 @@ import random
 
 def print_board(board):
     print("This is the current board. \n"
-    f"|{board[0][0]} |{board[0][1]} |{board[0][2]} | \n"
-    f"|{board[1][0]} |{board[1][1]} |{board[1][2]} | \n"
-    f"|{board[2][0]} |{board[2][1]} |{board[2][2]} | \n"
+    f"|{board[0][0] or ' '}|{board[0][1] or ' '}|{board[0][2] or ' '}| \n"
+    f"|{board[1][0] or ' '}|{board[1][1] or ' '}|{board[1][2] or ' '}| \n"
+    f"|{board[2][0] or ' '}|{board[2][1] or ' '}|{board[2][2] or ' '}| \n"
     )
 
 def start_game():
@@ -16,7 +16,7 @@ def start_game():
     while (not isWin(board)):
         print(random.choice(quote_repository['ask_player_for_move']))
         player_move = get_player_move()
-        while (not is_valid_move(player_move)):
+        while (not is_valid_move(player_move, board)):
             print(random.choice(quote_repository['invalid_move']))
             player_move = get_player_move()
         board = update_board(board, player_move, isXTurn)
@@ -26,13 +26,14 @@ def start_game():
     print(random.choice(quote_repository['win']))
         
 def get_player_move():
-    player_move = input("Enter your move: row, column\n")
-    print(f"This the variable player_move: {player_move}")
-    print(f"This the data type of player_move: {type(player_move)}")
-    player_move = [int(x) for x in player_move.split(",")]
-    print(f"This the variable player_move after int(): {player_move}")
-    print(f"This the data type of player_move after int(): {type(player_move)}")
-    return player_move
+    while True:
+        player_move = input("Enter your move: row, column\n")
+        try:
+            player_move = [int(x) for x in player_move.split(",")]
+            return player_move
+        except ValueError:
+            print("Incorrect move.")
+        
 
 def update_board(board, player_move, isXTurn):
     print("Running updated_board()")
@@ -42,15 +43,16 @@ def update_board(board, player_move, isXTurn):
         board[player_move[0]][player_move[1]] = "O"
     return board
 
-def is_valid_move(player_move):
+def is_valid_move(player_move, board):
     row = player_move[0]
     column = player_move[1]
-    if 0<= row <=2 and 0<= column <=2:
-        print('Valid move. Updating the board.')
-        return True
-    else:
+    if not (0<= row <=2 and 0<= column <=2):
         print(random.choice(quote_repository['invalid_move']))
         return False
+    if board[row][column] != "":
+        print('That section of the board is taken. Place your move elsewhere.')
+        return False
+    return True
 
 def isWin(board):
     print("isWin() is running.")
