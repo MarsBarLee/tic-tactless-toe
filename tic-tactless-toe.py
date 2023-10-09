@@ -23,7 +23,7 @@ def start_game():
         print_board(board)
         if isWin(board):
             print(random.choice(quote_repository['win']))
-            break
+            break # to prevent program running isXturn and continuing the loop
         if check_draw(board):
             print(random.choice(quote_repository['draw']))
             start_game()
@@ -35,7 +35,7 @@ def get_player_move():
         try:
             player_move = [int(x) for x in player_move.split(",")]
             return player_move
-        except ValueError:
+        except ValueError: # catch if player_move is not in 'interger,interger' format
             print("Incorrect move.")
         
 
@@ -52,10 +52,10 @@ def is_valid_move(player_move, board):
     if not (0<= row <=2 and 0<= column <=2):
         print(random.choice(quote_repository['invalid_move']))
         return False
-    if board[row][column] != " ":
+    if board[row][column] != " ": # if X or O already written on section
         print('That section of the board is taken. Place your move elsewhere.')
         return False
-    return True
+    return True # implicit else statement
 
 def isWin(board):
     # horizontal win condition (3 variations)
@@ -145,7 +145,6 @@ def restart():
 def quit_game():
     # when the player input the quit command
     print(random.choice(quote_repository['quit']))
-    # print('You have chosen to quit the game. The game will now quit.')
     quit()
 
 def test_suite():
