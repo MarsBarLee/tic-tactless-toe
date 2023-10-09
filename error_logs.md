@@ -213,3 +213,54 @@ board[0][0] = 'X' or 'O' or ''
     '' or ' ' = ' '
         F or (T) = (T)
         ergo, a section with ' ', 1 single space
+
+---
+Checks for draw() before isWin()
+Problem here is game calls draw instead of win
+Running updated_board()
+This is the current board.
+|X|O|X|
+|O|X|O|
+|O|X| |
+
+isWin() is running.
+They say the only thing you can do is keep going. So... keep going?
+Enter your move: row, column
+2,2
+Running updated_board()
+This is the current board.
+|X|O|X|
+|O|X|O|
+|O|X|X|
+
+Sometimes things are a dead-end. Like this. And many, many other things of yours.
+Welcome. You might not know, but tic-tac-toe is a pretty simple game.
+This is the current board.
+| | | |
+| | | |
+| | | |
+
+isWin() is running.
+They say the only thing you can do is keep going. So... keep going?
+Enter your move: row, column
+---
+
+def start_game():
+    print(random.choice(quote_repository['start_game']))
+    board = [[" "," "," "], [" "," ", " "], [" "," "," "]]
+    isXTurn = True
+    print_board(board)
+    while True: # almighty True
+        print(random.choice(quote_repository['ask_player_for_move']))
+        player_move = get_player_move()
+        while (not is_valid_move(player_move, board)):
+            print(random.choice(quote_repository['invalid_move']))
+            player_move = get_player_move()
+        board = update_board(board, player_move, isXTurn)
+        print_board(board)
+        if isWin(board):
+            print(random.choice(quote_repository['win']))
+            break # break so program doesn't run check_draw()
+        check_draw(board)
+        isXTurn = not isXTurn
+
