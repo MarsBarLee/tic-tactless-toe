@@ -88,6 +88,16 @@ def isWin(board):
         isWin = True 
     return isWin
 
+def check_draw(board):
+    filled_section_counter = 0
+    for row in board:
+        for column in row:
+            if column != " ":
+                filled_section_counter += 1
+                if filled_section_counter == 9:
+                    return True
+    return False
+
 quote_repository = {
     "start_game": [
         "Welcome, I guess. Why you started, I don't even know.",
@@ -127,25 +137,19 @@ quote_repository = {
     ]
 }
 
-def check_draw(board):
-    filled_section_counter = 0
-    for row in board:
-        for column in row:
-            if column != " ":
-                filled_section_counter += 1
-                if filled_section_counter == 9:
-                    return True
-    return False
+start_game()
 
-def restart():
+# test_suite()
+
+# def restart():
     # when the player input the restart command
-    print(random.choice(quote_repository['restart']))
-    start_game()
+    #print(random.choice(quote_repository['restart']))
+    # start_game()
 
-def quit_game():
+# def quit_game():
     # when the player input the quit command
-    print(random.choice(quote_repository['quit']))
-    quit()
+    # print(random.choice(quote_repository['quit']))
+    # quit()
 
 def test_suite():
     # X win
@@ -176,7 +180,3 @@ def test_suite():
     assert(not isWin([["","O",""], ["X","O", ""], ["O","",""]]))
     # draw
     assert(check_draw([["X","O","O"], ["X","O", "X"], ["O","X","O"]]))
-
-start_game()
-# isWin([["X","",""], ["X","", ""], ["X","",""]]) 
-# test_suite()
