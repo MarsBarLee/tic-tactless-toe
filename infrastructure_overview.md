@@ -20,7 +20,7 @@ isDraw(board)
 
 ## Important variables
 board, nested array, set in start_game()
-player_move, 'interger, intger, set by get_player_move
+player_move, 'interger,intger', set by get_player_move
 isXTurn, boolean, set in start_game()
 
 ## Instruction Manual for Development
