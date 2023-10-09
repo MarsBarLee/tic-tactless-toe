@@ -24,7 +24,7 @@ def start_game():
         if isWin(board):
             print(random.choice(quote_repository['win']))
             break # to prevent program running isXturn and continuing the loop
-        if check_draw(board):
+        if isDraw(board):
             print(random.choice(quote_repository['draw']))
             start_game()
         isXTurn = not isXTurn
@@ -88,7 +88,7 @@ def isWin(board):
         isWin = True 
     return isWin
 
-def check_draw(board):
+def isDraw(board):
     filled_section_counter = 0
     for row in board:
         for column in row:
@@ -179,4 +179,4 @@ def test_suite():
     # not winning board = True
     assert(not isWin([["","O",""], ["X","O", ""], ["O","",""]]))
     # draw
-    assert(check_draw([["X","O","O"], ["X","O", "X"], ["O","X","O"]]))
+    assert(isDraw([["X","O","O"], ["X","O", "X"], ["O","X","O"]]))

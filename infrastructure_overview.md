@@ -7,7 +7,7 @@ get_player_move()
 update_board()
 is_valid_move()
 isWin()
-check_draw()
+isDraw()
 
 ## With variables
 print_board(board)
@@ -16,7 +16,7 @@ get_player_move(board, player_move, isXTurn)
 update_board(board, player_move, isXTurn)
 is_valid_move(player_move, board)
 isWin(board)
-check_draw(board)
+isDraw(board)
 
 ## Important variables
 board, nested array, set in start_game()
@@ -65,7 +65,7 @@ Functions
   - start_turn()
   - check_valid_move()
   - check_win()
-  - check_draw()
+  - isDraw()
   - restart()
   - quit_game()
   - switch_players_turn()
