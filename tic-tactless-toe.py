@@ -3,57 +3,61 @@ import random
 
 def print_board(board):
     print("This is the current board. \n"
-    f"|{board[0][0]} |{board[0][1]} |{board[0][2]} | \n"
-    f"|{board[1][0]} |{board[1][1]} |{board[1][2]} | \n"
-    f"|{board[2][0]} |{board[2][1]} |{board[2][2]} | \n"
+    f"|{board[0][0]}|{board[0][1]}|{board[0][2]}| \n"
+    f"|{board[1][0]}|{board[1][1]}|{board[1][2]}| \n"
+    f"|{board[2][0]}|{board[2][1]}|{board[2][2]}| \n"
     )
 
 def start_game():
     print(random.choice(quote_repository['start_game']))
-    board = [["","",""], ["","", ""], ["","",""]]
+    board = [[" "," "," "], [" "," ", " "], [" "," "," "]]
     isXTurn = True
     print_board(board)
-    while (not isWin(board)):
+    while True:
         print(random.choice(quote_repository['ask_player_for_move']))
         player_move = get_player_move()
-        while (not is_valid_move(player_move)):
+        while (not is_valid_move(player_move, board)):
             print(random.choice(quote_repository['invalid_move']))
             player_move = get_player_move()
         board = update_board(board, player_move, isXTurn)
         print_board(board)
-        # if isWin() and it is the player's turn
+        if isWin(board):
+            print(random.choice(quote_repository['win']))
+            break # to prevent program running isXturn and continuing the loop
+        if check_draw(board):
+            print(random.choice(quote_repository['draw']))
+            start_game()
         isXTurn = not isXTurn
-    print(random.choice(quote_repository['win']))
         
 def get_player_move():
-    player_move = input("Enter your move: row, column\n")
-    print(f"This the variable player_move: {player_move}")
-    print(f"This the data type of player_move: {type(player_move)}")
-    player_move = [int(x) for x in player_move.split(",")]
-    print(f"This the variable player_move after int(): {player_move}")
-    print(f"This the data type of player_move after int(): {type(player_move)}")
-    return player_move
+    while True:
+        player_move = input("Enter your move: row, column\n")
+        try:
+            player_move = [int(x) for x in player_move.split(",")]
+            return player_move
+        except ValueError: # catch if player_move is not in 'interger,interger' format
+            print("Incorrect move.")
+        
 
 def update_board(board, player_move, isXTurn):
-    print("Running updated_board()")
     if(isXTurn):
         board[player_move[0]][player_move[1]] = "X"
     else:
         board[player_move[0]][player_move[1]] = "O"
     return board
 
-def is_valid_move(player_move):
+def is_valid_move(player_move, board):
     row = player_move[0]
     column = player_move[1]
-    if 0<= row <=2 and 0<= column <=2:
-        print('Valid move. Updating the board.')
-        return True
-    else:
+    if not (0<= row <=2 and 0<= column <=2):
         print(random.choice(quote_repository['invalid_move']))
         return False
+    if board[row][column] != " ": # if X or O already written on section
+        print('That section of the board is taken. Place your move elsewhere.')
+        return False
+    return True # implicit else statement
 
 def isWin(board):
-    print("isWin() is running.")
     # horizontal win condition (3 variations)
     # top row
     isWin = False
@@ -83,6 +87,16 @@ def isWin(board):
     elif ((board[0][2] == 'X') and (board[1][1] == 'X') and (board[2][0] == 'X')) or (board[0][2] == 'O') and (board[1][1] == 'O') and (board[2][0] == 'O'):
         isWin = True 
     return isWin
+
+def check_draw(board):
+    filled_section_counter = 0
+    for row in board:
+        for column in row:
+            if column != " ":
+                filled_section_counter += 1
+                if filled_section_counter == 9:
+                    return True
+    return False
 
 quote_repository = {
     "start_game": [
@@ -123,59 +137,46 @@ quote_repository = {
     ]
 }
 
-filled_section_counter = 0
+start_game()
 
-def check_draw():
-    for row in board:
-        for column in row:
-            if column != " ":
-                print('Filled section, increase filled_section_counter by one') # remove in final
-                filled_section_counter += 1
-                if filled_section_counter == 9:
-                    print(random.choice(quote_repository['draw']))
-                    # print('The game has come to a draw.')
-                    start_game()
-            else:
-                print('Empty section') # remove in final
-                # nothing happens
+# test_suite()
 
-def restart():
+# def restart():
     # when the player input the restart command
-    print(random.choice(quote_repository['restart']))
-    start_game()
+    #print(random.choice(quote_repository['restart']))
+    # start_game()
 
-def quit_game():
+# def quit_game():
     # when the player input the quit command
-    print(random.choice(quote_repository['quit']))
-    # print('You have chosen to quit the game. The game will now quit.')
-    quit()
+    # print(random.choice(quote_repository['quit']))
+    # quit()
 
 def test_suite():
     # X win
     # horizontal win
-    isWin([["X","X","X"], ["","", ""], ["","",""]])
-    isWin([["","",""], ["X","X", "X"], ["","",""]])
-    isWin([["","",""], ["","", ""], ["X","X","X"]])    
+    assert(isWin([["X","X","X"], ["","", ""], ["","",""]]))
+    assert(isWin([["","",""], ["X","X", "X"], ["","",""]]))
+    assert(isWin([["","",""], ["","", ""], ["X","X","X"]]))   
     # vertical win
-    isWin([["X","",""], ["X","", ""], ["X","",""]])
-    isWin([["","X",""], ["","X", ""], ["","X",""]])
-    isWin([["","","X"], ["","", "X"], ["","","X"]])
+    assert(isWin([["X","",""], ["X","", ""], ["X","",""]]))
+    assert(isWin([["","X",""], ["","X", ""], ["","X",""]]))
+    assert(isWin([["","","X"], ["","", "X"], ["","","X"]]))
     # diagonal win
-    isWin([["X","",""], ["","X", ""], ["","","X"]])
-    isWin([["","","X"], ["","X", ""], ["X","",""]])
+    assert(isWin([["X","",""], ["","X", ""], ["","","X"]]))
+    assert(isWin([["","","X"], ["","X", ""], ["X","",""]]))
     # O win
     # horizontal win
-    isWin([["O","O","O"], ["","", ""], ["","",""]])
-    isWin([["","",""], ["O","O","O"], ["","",""]])
-    isWin([["","",""], ["","", ""], ["O","O","O"]])    
+    assert(isWin([["O","O","O"], ["","", ""], ["","",""]]))
+    assert(isWin([["","",""], ["O","O","O"], ["","",""]]))
+    assert(isWin([["","",""], ["","", ""], ["O","O","O"]]))   
     # vertical win
-    isWin([["O","",""], ["O","", ""], ["O","",""]])
-    isWin([["","O",""], ["","O", ""], ["","O",""]])
-    isWin([["","","O"], ["","", "O"], ["","","O"]])
+    assert(isWin([["O","",""], ["O","", ""], ["O","",""]]))
+    assert(isWin([["","O",""], ["","O", ""], ["","O",""]]))
+    assert(isWin([["","","O"], ["","", "O"], ["","","O"]]))
     # diagonal win
-    isWin([["O","",""], ["","O", ""], ["","","O"]])
-    isWin([["","","O"], ["","O", ""], ["O","",""]])
-
-start_game()
-# isWin([["X","",""], ["X","", ""], ["X","",""]]) 
-# test_suite()
+    assert(isWin([["O","",""], ["","O", ""], ["","","O"]]))
+    assert(isWin([["","","O"], ["","O", ""], ["O","",""]]))
+    # not winning board = True
+    assert(not isWin([["","O",""], ["X","O", ""], ["O","",""]]))
+    # draw
+    assert(check_draw([["X","O","O"], ["X","O", "X"], ["O","X","O"]]))
