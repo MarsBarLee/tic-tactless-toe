@@ -1,5 +1,28 @@
 # Infrastructure Overview
 
+# Functions
+print_board()
+start_game()
+get_player_move()
+update_board()
+is_valid_move()
+isWin()
+check_draw()
+
+## With variables
+print_board(board)
+start_game()
+get_player_move(board, player_move, isXTurn)
+update_board(board, player_move, isXTurn)
+is_valid_move(player_move, board)
+isWin(board)
+check_draw(board)
+
+## Important variables
+board, nested array, set in start_game()
+player_move, 'interger, intger, set by get_player_move
+isXTurn, boolean, set in start_game()
+
 ## Instruction Manual for Development
 - python -i tic-tactless-toe.py
   - opens Python repl'
